@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>collections-methods.md - Scala Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> introduction.md</a></li><li class="chapter-item expanded "><a href="prelude-taste-of-scala.html"><strong aria-hidden="true">2.</strong> prelude-taste-of-scala.md</a></li><li class="chapter-item expanded "><a href="preliminaries.html"><strong aria-hidden="true">3.</strong> preliminaries.md</a></li><li class="chapter-item expanded "><a href="scala-features.html"><strong aria-hidden="true">4.</strong> scala-features.md</a></li><li class="chapter-item expanded "><a href="hello-world-1.html"><strong aria-hidden="true">5.</strong> hello-world-1.md</a></li><li class="chapter-item expanded "><a href="hello-world-2.html"><strong aria-hidden="true">6.</strong> hello-world-2.md</a></li><li class="chapter-item expanded "><a href="scala-repl.html"><strong aria-hidden="true">7.</strong> scala-repl.md</a></li><li class="chapter-item expanded "><a href="two-types-variables.html"><strong aria-hidden="true">8.</strong> two-types-variables.md</a></li><li class="chapter-item expanded "><a href="type-is-optional.html"><strong aria-hidden="true">9.</strong> type-is-optional.md</a></li><li class="chapter-item expanded "><a href="built-in-types.html"><strong aria-hidden="true">10.</strong> built-in-types.md</a></li><li class="chapter-item expanded "><a href="two-notes-about-strings.html"><strong aria-hidden="true">11.</strong> two-notes-about-strings.md</a></li><li class="chapter-item expanded "><a href="command-line-io.html"><strong aria-hidden="true">12.</strong> command-line-io.md</a></li><li class="chapter-item expanded "><a href="control-structures.html"><strong aria-hidden="true">13.</strong> control-structures.md</a></li><li class="chapter-item expanded "><a href="if-then-else-construct.html"><strong aria-hidden="true">14.</strong> if-then-else-construct.md</a></li><li class="chapter-item expanded "><a href="for-loops.html"><strong aria-hidden="true">15.</strong> for-loops.md</a></li><li class="chapter-item expanded "><a href="for-expressions.html"><strong aria-hidden="true">16.</strong> for-expressions.md</a></li><li class="chapter-item expanded "><a href="match-expressions.html"><strong aria-hidden="true">17.</strong> match-expressions.md</a></li><li class="chapter-item expanded "><a href="try-catch-finally.html"><strong aria-hidden="true">18.</strong> try-catch-finally.md</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">19.</strong> classes.md</a></li><li class="chapter-item expanded "><a href="classes-aux-constructors.html"><strong aria-hidden="true">20.</strong> classes-aux-constructors.md</a></li><li class="chapter-item expanded "><a href="constructors-default-values.html"><strong aria-hidden="true">21.</strong> constructors-default-values.md</a></li><li class="chapter-item expanded "><a href="methods-first-look.html"><strong aria-hidden="true">22.</strong> methods-first-look.md</a></li><li class="chapter-item expanded "><a href="enumerations-pizza-class.html"><strong aria-hidden="true">23.</strong> enumerations-pizza-class.md</a></li><li class="chapter-item expanded "><a href="traits-intro.html"><strong aria-hidden="true">24.</strong> traits-intro.md</a></li><li class="chapter-item expanded "><a href="traits-interfaces.html"><strong aria-hidden="true">25.</strong> traits-interfaces.md</a></li><li class="chapter-item expanded "><a href="traits-abstract-mixins.html"><strong aria-hidden="true">26.</strong> traits-abstract-mixins.md</a></li><li class="chapter-item expanded "><a href="abstract-classes.html"><strong aria-hidden="true">27.</strong> abstract-classes.md</a></li><li class="chapter-item expanded "><a href="collections-101.html"><strong aria-hidden="true">28.</strong> collections-101.md</a></li><li class="chapter-item expanded "><a href="arraybuffer-examples.html"><strong aria-hidden="true">29.</strong> arraybuffer-examples.md</a></li><li class="chapter-item expanded "><a href="list-class.html"><strong aria-hidden="true">30.</strong> list-class.md</a></li><li class="chapter-item expanded "><a href="vector-class.html"><strong aria-hidden="true">31.</strong> vector-class.md</a></li><li class="chapter-item expanded "><a href="map-class.html"><strong aria-hidden="true">32.</strong> map-class.md</a></li><li class="chapter-item expanded "><a href="set-class.html"><strong aria-hidden="true">33.</strong> set-class.md</a></li><li class="chapter-item expanded "><a href="anonymous-functions.html"><strong aria-hidden="true">34.</strong> anonymous-functions.md</a></li><li class="chapter-item expanded "><a href="collections-methods.html" class="active"><strong aria-hidden="true">35.</strong> collections-methods.md</a></li><li class="chapter-item expanded "><a href="collections-maps.html"><strong aria-hidden="true">36.</strong> collections-maps.md</a></li><li class="chapter-item expanded "><a href="misc.html"><strong aria-hidden="true">37.</strong> misc.md</a></li><li class="chapter-item expanded "><a href="tuples.html"><strong aria-hidden="true">38.</strong> tuples.md</a></li><li class="chapter-item expanded "><a href="oop-pizza-example.html"><strong aria-hidden="true">39.</strong> oop-pizza-example.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-intro.html"><strong aria-hidden="true">40.</strong> sbt-scalatest-intro.md</a></li><li class="chapter-item expanded "><a href="scala-build-tool-sbt.html"><strong aria-hidden="true">41.</strong> scala-build-tool-sbt.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-tdd.html"><strong aria-hidden="true">42.</strong> sbt-scalatest-tdd.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-bdd.html"><strong aria-hidden="true">43.</strong> sbt-scalatest-bdd.md</a></li><li class="chapter-item expanded "><a href="functional-programming.html"><strong aria-hidden="true">44.</strong> functional-programming.md</a></li><li class="chapter-item expanded "><a href="pure-functions.html"><strong aria-hidden="true">45.</strong> pure-functions.md</a></li><li class="chapter-item expanded "><a href="passing-functions-around.html"><strong aria-hidden="true">46.</strong> passing-functions-around.md</a></li><li class="chapter-item expanded "><a href="no-null-values.html"><strong aria-hidden="true">47.</strong> no-null-values.md</a></li><li class="chapter-item expanded "><a href="companion-objects.html"><strong aria-hidden="true">48.</strong> companion-objects.md</a></li><li class="chapter-item expanded "><a href="case-classes.html"><strong aria-hidden="true">49.</strong> case-classes.md</a></li><li class="chapter-item expanded "><a href="case-objects.html"><strong aria-hidden="true">50.</strong> case-objects.md</a></li><li class="chapter-item expanded "><a href="functional-error-handling.html"><strong aria-hidden="true">51.</strong> functional-error-handling.md</a></li><li class="chapter-item expanded "><a href="concurrency-signpost.html"><strong aria-hidden="true">52.</strong> concurrency-signpost.md</a></li><li class="chapter-item expanded "><a href="futures.html"><strong aria-hidden="true">53.</strong> futures.md</a></li><li class="chapter-item expanded "><a href="where-next.html"><strong aria-hidden="true">54.</strong> where-next.md</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scala Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>type: section
+layout: multipage-overview
+title: Common Sequence Methods
+description: This page shows examples of the most common methods that are available on the Scala sequences (collections classes).
+partof: scala_book
+overview-name: Scala Book
+discourse: true
+num: 35
+outof: 54
+previous-page: anonymous-functions
+next-page: collections-maps</h2>
+<p>A great strength of the Scala collections classes is that they come with dozens of pre-built methods. The benefit of this is that you no longer need to write custom <code>for</code> loops every time you need to work on a collection. (If that’s not enough of a benefit, it also means that you no longer have to read custom <code>for</code> loops written by other developers.)</p>
+<p>Because there are so many methods available to you, they won’t all be shown here. Instead, just some of the most commonly-used methods will be shown, including:</p>
+<ul>
+<li><code>map</code></li>
+<li><code>filter</code></li>
+<li><code>foreach</code></li>
+<li><code>head</code></li>
+<li><code>tail</code></li>
+<li><code>take</code>, <code>takeWhile</code></li>
+<li><code>drop</code>, <code>dropWhile</code></li>
+<li><code>reduce</code></li>
+</ul>
+<p>The following methods will work on all of the collections “sequence” classes, including <code>Array</code>, <code>ArrayBuffer</code>, <code>List</code>, <code>Vector</code>, etc., but these examples will use a <code>List</code> unless otherwise specified.</p>
+<h2 id="note-the-methods-dont-mutate-the-collection"><a class="header" href="#note-the-methods-dont-mutate-the-collection">Note: The methods don’t mutate the collection</a></h2>
+<p>As a very important note, none of these methods mutate the collection that they’re called on. They all work in a functional style, so they return a new collection with the modified results.</p>
+<h2 id="sample-lists"><a class="header" href="#sample-lists">Sample lists</a></h2>
+<p>The following examples will use these lists:</p>
+<pre><code class="language-scala">val nums = (1 to 10).toList
+val names = List(&quot;joel&quot;, &quot;ed&quot;, &quot;chris&quot;, &quot;maurice&quot;)
+</code></pre>
+<p>This is what those lists look like in the REPL:</p>
+<pre><code class="language-scala">scala&gt; val nums = (1 to 10).toList
+nums: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala&gt; val names = List(&quot;joel&quot;, &quot;ed&quot;, &quot;chris&quot;, &quot;maurice&quot;)
+names: List[String] = List(joel, ed, chris, maurice)
+</code></pre>
+<h2 id="map"><a class="header" href="#map"><code>map</code></a></h2>
+<p>The <code>map</code> method steps through each element in the existing list, applying the algorithm you supply to each element, one at a time; it then returns a new list with all of the modified elements.</p>
+<p>Here’s an example of the <code>map</code> method being applied to the <code>nums</code> list:</p>
+<pre><code class="language-scala">scala&gt; val doubles = nums.map(_ * 2)
+doubles: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+</code></pre>
+<p>As we showed in the lesson on anonymous functions, you can also write the anonymous function like this:</p>
+<pre><code class="language-scala">scala&gt; val doubles = nums.map(i =&gt; i * 2)
+doubles: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+</code></pre>
+<p>However, in this lesson we’ll always use the first, shorter form.</p>
+<p>With that background, here’s an example of the <code>map</code> method being applied to the <code>nums</code> and <code>names</code> lists:</p>
+<pre><code class="language-scala">scala&gt; val capNames = names.map(_.capitalize)
+capNames: List[String] = List(Joel, Ed, Chris, Maurice)
+
+scala&gt; val doubles = nums.map(_ * 2)
+doubles: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+
+scala&gt; val lessThanFive = nums.map(_ &lt; 5)
+lessThanFive: List[Boolean] = List(true, true, true, true, false, false, false, false, false, false)
+</code></pre>
+<p>As that last example shows, it’s perfectly legal (and very common) to use map to return a list with a different type (<code>List[Boolean]</code>) from the original type (<code>List[Int]</code>).</p>
+<h2 id="filter"><a class="header" href="#filter"><code>filter</code></a></h2>
+<p>The <code>filter</code> method creates a new, filtered list from the given list. Here are a few examples:</p>
+<pre><code class="language-scala">scala&gt; val lessThanFive = nums.filter(_ &lt; 5)
+lessThanFive: List[Int] = List(1, 2, 3, 4)
+
+scala&gt; val evens = nums.filter(_ % 2 == 0)
+evens: List[Int] = List(2, 4, 6, 8, 10)
+
+scala&gt; val shortNames = names.filter(_.length &lt;= 4)
+shortNames: List[String] = List(joel, ed)
+</code></pre>
+<h2 id="foreach"><a class="header" href="#foreach"><code>foreach</code></a></h2>
+<p>The <code>foreach</code> method is used to loop over all elements in a collection. As we mentioned in a previous lesson, <code>foreach</code> is used for side-effects, such as printing information. Here’s an example with the <code>names</code> list:</p>
+<pre><code class="language-scala">scala&gt; names.foreach(println)
+joel
+ed
+chris
+maurice
+</code></pre>
+<p>The <code>nums</code> list is a little long, so you may not want to print out all of those elements. But a great thing about Scala’s approach is that you can chain methods together to solve problems like this. For example, this is one way to print the first three elements from <code>nums</code>:</p>
+<pre><code class="language-scala">nums.filter(_ &lt; 4).foreach(println)
+</code></pre>
+<p>The REPL shows the result:</p>
+<pre><code class="language-scala">scala&gt; nums.filter(_ &lt; 4).foreach(println)
+1
+2
+3
+</code></pre>
+<h2 id="head"><a class="header" href="#head"><code>head</code></a></h2>
+<p>The <code>head</code> method comes from Lisp and functional programming languages. It’s used to print the first element (the head element) of a list:</p>
+<pre><code class="language-scala">scala&gt; nums.head
+res0: Int = 1
+
+scala&gt; names.head
+res1: String = joel
+</code></pre>
+<p>Because a <code>String</code> is a sequence of characters, you can also treat it like a list. This is how <code>head</code> works on these strings:</p>
+<pre><code class="language-scala">scala&gt; &quot;foo&quot;.head
+res2: Char = f
+
+scala&gt; &quot;bar&quot;.head
+res3: Char = b
+</code></pre>
+<p><code>head</code> is a great method to work with, but as a word of caution it can also throw an exception when called on an empty collection:</p>
+<pre><code class="language-scala">scala&gt; val emptyList = List[Int]()
+val emptyList: List[Int] = List()
+
+scala&gt; emptyList.head
+java.util.NoSuchElementException: head of empty list
+</code></pre>
+<h2 id="tail"><a class="header" href="#tail"><code>tail</code></a></h2>
+<p>The <code>tail</code> method also comes from Lisp and functional programming languages. It’s used to print every element in a list after the head element. A few examples:</p>
+<pre><code class="language-scala">scala&gt; nums.tail
+res0: List[Int] = List(2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala&gt; names.tail
+res1: List[String] = List(ed, chris, maurice)
+</code></pre>
+<p>Just like <code>head</code>, <code>tail</code> also works on strings:</p>
+<pre><code class="language-scala">scala&gt; &quot;foo&quot;.tail
+res2: String = oo
+
+scala&gt; &quot;bar&quot;.tail
+res3: String = ar
+</code></pre>
+<p>Note that like <code>head</code>, <code>tail</code> will also throw an exception when called on an empty collection:</p>
+<pre><code class="language-scala">scala&gt; emptyList.tail
+java.lang.UnsupportedOperationException: tail of empty list
+</code></pre>
+<h2 id="take-takewhile"><a class="header" href="#take-takewhile"><code>take</code>, <code>takeWhile</code></a></h2>
+<p>The <code>take</code> and <code>takeWhile</code> methods give you a nice way of taking the elements out of a list that you want to create a new list. This is <code>take</code>:</p>
+<pre><code class="language-scala">scala&gt; nums.take(1)
+res0: List[Int] = List(1)
+
+scala&gt; nums.take(2)
+res1: List[Int] = List(1, 2)
+
+scala&gt; names.take(1)
+res2: List[String] = List(joel)
+
+scala&gt; names.take(2)
+res3: List[String] = List(joel, ed)
+</code></pre>
+<p>And this is <code>takeWhile</code>:</p>
+<pre><code class="language-scala">scala&gt; nums.takeWhile(_ &lt; 5)
+res4: List[Int] = List(1, 2, 3, 4)
+
+scala&gt; names.takeWhile(_.length &lt; 5)
+res5: List[String] = List(joel, ed)
+</code></pre>
+<h2 id="drop-dropwhile"><a class="header" href="#drop-dropwhile"><code>drop</code>, <code>dropWhile</code></a></h2>
+<p><code>drop</code> and <code>dropWhile</code> are essentially the opposite of <code>take</code> and <code>takeWhile</code>. This is <code>drop</code>:</p>
+<pre><code class="language-scala">scala&gt; nums.drop(1)
+res0: List[Int] = List(2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala&gt; nums.drop(5)
+res1: List[Int] = List(6, 7, 8, 9, 10)
+
+scala&gt; names.drop(1)
+res2: List[String] = List(ed, chris, maurice)
+
+scala&gt; names.drop(2)
+res3: List[String] = List(chris, maurice)
+</code></pre>
+<p>And this is <code>dropWhile</code>:</p>
+<pre><code class="language-scala">scala&gt; nums.dropWhile(_ &lt; 5)
+res4: List[Int] = List(5, 6, 7, 8, 9, 10)
+
+scala&gt; names.dropWhile(_ != &quot;chris&quot;)
+res5: List[String] = List(chris, maurice)
+</code></pre>
+<h2 id="reduce"><a class="header" href="#reduce"><code>reduce</code></a></h2>
+<p>When you hear the term, “map reduce,” the “reduce” part refers to methods like <code>reduce</code>. It takes a function (or anonymous function) and applies that function to successive elements in the list.</p>
+<p>The best way to explain <code>reduce</code> is to create a little helper method you can pass into it. For example, this is an <code>add</code> method that adds two integers together, and also gives us some nice debug output:</p>
+<pre><code class="language-scala">def add(x: Int, y: Int): Int = {
+    val theSum = x + y
+    println(s&quot;received $x and $y, their sum is $theSum&quot;)
+    theSum
+}
+</code></pre>
+<p>Now, given that method and this list:</p>
+<pre><code class="language-scala">val a = List(1,2,3,4)
+</code></pre>
+<p>this is what happens when you pass the <code>add</code> method into <code>reduce</code>:</p>
+<pre><code class="language-scala">scala&gt; a.reduce(add)
+received 1 and 2, their sum is 3
+received 3 and 3, their sum is 6
+received 6 and 4, their sum is 10
+res0: Int = 10
+</code></pre>
+<p>As that result shows, <code>reduce</code> uses <code>add</code> to reduce the list <code>a</code> into a single value, in this case, the sum of the integers in the list.</p>
+<p>Once you get used to <code>reduce</code>, you’ll write a “sum” algorithm like this:</p>
+<pre><code class="language-scala">scala&gt; a.reduce(_ + _)
+res0: Int = 10
+</code></pre>
+<p>Similarly, this is what a “product” algorithm looks like:</p>
+<pre><code class="language-scala">scala&gt; a.reduce(_ * _)
+res1: Int = 24
+</code></pre>
+<p>That might be a little mind-blowing if you’ve never seen it before, but after a while you’ll get used to it.</p>
+<blockquote>
+<p>Before moving on, an important part to know about <code>reduce</code> is that — as its name implies — it’s used to <em>reduce</em> a collection down to a single value.</p>
+</blockquote>
+<h2 id="even-more"><a class="header" href="#even-more">Even more!</a></h2>
+<p>There are literally dozens of additional methods on the Scala sequence classes that will keep you from ever needing to write another <code>for</code> loop. However, because this is a simple introduction book they won’t all be covered here. For more information, see <a href="%7B%7Bsite.baseurl%7D%7D/overviews/collections-2.13/seqs.html">the collections overview of sequence traits</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="anonymous-functions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="collections-maps.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="anonymous-functions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="collections-maps.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

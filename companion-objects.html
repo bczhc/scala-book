@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>companion-objects.md - Scala Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> introduction.md</a></li><li class="chapter-item expanded "><a href="prelude-taste-of-scala.html"><strong aria-hidden="true">2.</strong> prelude-taste-of-scala.md</a></li><li class="chapter-item expanded "><a href="preliminaries.html"><strong aria-hidden="true">3.</strong> preliminaries.md</a></li><li class="chapter-item expanded "><a href="scala-features.html"><strong aria-hidden="true">4.</strong> scala-features.md</a></li><li class="chapter-item expanded "><a href="hello-world-1.html"><strong aria-hidden="true">5.</strong> hello-world-1.md</a></li><li class="chapter-item expanded "><a href="hello-world-2.html"><strong aria-hidden="true">6.</strong> hello-world-2.md</a></li><li class="chapter-item expanded "><a href="scala-repl.html"><strong aria-hidden="true">7.</strong> scala-repl.md</a></li><li class="chapter-item expanded "><a href="two-types-variables.html"><strong aria-hidden="true">8.</strong> two-types-variables.md</a></li><li class="chapter-item expanded "><a href="type-is-optional.html"><strong aria-hidden="true">9.</strong> type-is-optional.md</a></li><li class="chapter-item expanded "><a href="built-in-types.html"><strong aria-hidden="true">10.</strong> built-in-types.md</a></li><li class="chapter-item expanded "><a href="two-notes-about-strings.html"><strong aria-hidden="true">11.</strong> two-notes-about-strings.md</a></li><li class="chapter-item expanded "><a href="command-line-io.html"><strong aria-hidden="true">12.</strong> command-line-io.md</a></li><li class="chapter-item expanded "><a href="control-structures.html"><strong aria-hidden="true">13.</strong> control-structures.md</a></li><li class="chapter-item expanded "><a href="if-then-else-construct.html"><strong aria-hidden="true">14.</strong> if-then-else-construct.md</a></li><li class="chapter-item expanded "><a href="for-loops.html"><strong aria-hidden="true">15.</strong> for-loops.md</a></li><li class="chapter-item expanded "><a href="for-expressions.html"><strong aria-hidden="true">16.</strong> for-expressions.md</a></li><li class="chapter-item expanded "><a href="match-expressions.html"><strong aria-hidden="true">17.</strong> match-expressions.md</a></li><li class="chapter-item expanded "><a href="try-catch-finally.html"><strong aria-hidden="true">18.</strong> try-catch-finally.md</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">19.</strong> classes.md</a></li><li class="chapter-item expanded "><a href="classes-aux-constructors.html"><strong aria-hidden="true">20.</strong> classes-aux-constructors.md</a></li><li class="chapter-item expanded "><a href="constructors-default-values.html"><strong aria-hidden="true">21.</strong> constructors-default-values.md</a></li><li class="chapter-item expanded "><a href="methods-first-look.html"><strong aria-hidden="true">22.</strong> methods-first-look.md</a></li><li class="chapter-item expanded "><a href="enumerations-pizza-class.html"><strong aria-hidden="true">23.</strong> enumerations-pizza-class.md</a></li><li class="chapter-item expanded "><a href="traits-intro.html"><strong aria-hidden="true">24.</strong> traits-intro.md</a></li><li class="chapter-item expanded "><a href="traits-interfaces.html"><strong aria-hidden="true">25.</strong> traits-interfaces.md</a></li><li class="chapter-item expanded "><a href="traits-abstract-mixins.html"><strong aria-hidden="true">26.</strong> traits-abstract-mixins.md</a></li><li class="chapter-item expanded "><a href="abstract-classes.html"><strong aria-hidden="true">27.</strong> abstract-classes.md</a></li><li class="chapter-item expanded "><a href="collections-101.html"><strong aria-hidden="true">28.</strong> collections-101.md</a></li><li class="chapter-item expanded "><a href="arraybuffer-examples.html"><strong aria-hidden="true">29.</strong> arraybuffer-examples.md</a></li><li class="chapter-item expanded "><a href="list-class.html"><strong aria-hidden="true">30.</strong> list-class.md</a></li><li class="chapter-item expanded "><a href="vector-class.html"><strong aria-hidden="true">31.</strong> vector-class.md</a></li><li class="chapter-item expanded "><a href="map-class.html"><strong aria-hidden="true">32.</strong> map-class.md</a></li><li class="chapter-item expanded "><a href="set-class.html"><strong aria-hidden="true">33.</strong> set-class.md</a></li><li class="chapter-item expanded "><a href="anonymous-functions.html"><strong aria-hidden="true">34.</strong> anonymous-functions.md</a></li><li class="chapter-item expanded "><a href="collections-methods.html"><strong aria-hidden="true">35.</strong> collections-methods.md</a></li><li class="chapter-item expanded "><a href="collections-maps.html"><strong aria-hidden="true">36.</strong> collections-maps.md</a></li><li class="chapter-item expanded "><a href="misc.html"><strong aria-hidden="true">37.</strong> misc.md</a></li><li class="chapter-item expanded "><a href="tuples.html"><strong aria-hidden="true">38.</strong> tuples.md</a></li><li class="chapter-item expanded "><a href="oop-pizza-example.html"><strong aria-hidden="true">39.</strong> oop-pizza-example.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-intro.html"><strong aria-hidden="true">40.</strong> sbt-scalatest-intro.md</a></li><li class="chapter-item expanded "><a href="scala-build-tool-sbt.html"><strong aria-hidden="true">41.</strong> scala-build-tool-sbt.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-tdd.html"><strong aria-hidden="true">42.</strong> sbt-scalatest-tdd.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-bdd.html"><strong aria-hidden="true">43.</strong> sbt-scalatest-bdd.md</a></li><li class="chapter-item expanded "><a href="functional-programming.html"><strong aria-hidden="true">44.</strong> functional-programming.md</a></li><li class="chapter-item expanded "><a href="pure-functions.html"><strong aria-hidden="true">45.</strong> pure-functions.md</a></li><li class="chapter-item expanded "><a href="passing-functions-around.html"><strong aria-hidden="true">46.</strong> passing-functions-around.md</a></li><li class="chapter-item expanded "><a href="no-null-values.html"><strong aria-hidden="true">47.</strong> no-null-values.md</a></li><li class="chapter-item expanded "><a href="companion-objects.html" class="active"><strong aria-hidden="true">48.</strong> companion-objects.md</a></li><li class="chapter-item expanded "><a href="case-classes.html"><strong aria-hidden="true">49.</strong> case-classes.md</a></li><li class="chapter-item expanded "><a href="case-objects.html"><strong aria-hidden="true">50.</strong> case-objects.md</a></li><li class="chapter-item expanded "><a href="functional-error-handling.html"><strong aria-hidden="true">51.</strong> functional-error-handling.md</a></li><li class="chapter-item expanded "><a href="concurrency-signpost.html"><strong aria-hidden="true">52.</strong> concurrency-signpost.md</a></li><li class="chapter-item expanded "><a href="futures.html"><strong aria-hidden="true">53.</strong> futures.md</a></li><li class="chapter-item expanded "><a href="where-next.html"><strong aria-hidden="true">54.</strong> where-next.md</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scala Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>type: section
+layout: multipage-overview
+title: Companion Objects
+description: This lesson provides an introduction to 'companion objects' in Scala, including writing 'apply' and 'unapply' methods.
+partof: scala_book
+overview-name: Scala Book
+discourse: true
+num: 48
+outof: 54
+previous-page: no-null-values
+next-page: case-classes</h2>
+<p>A <em>companion object</em> in Scala is an <code>object</code> that’s declared in the same file as a <code>class</code>, and has the same name as the class. For instance, when the following code is saved in a file named <em>Pizza.scala</em>, the <code>Pizza</code> object is considered to be a companion object to the <code>Pizza</code> class:</p>
+<pre><code class="language-scala">class Pizza {
+}
+
+object Pizza {
+}
+</code></pre>
+<p>This has several benefits. First, a companion object and its class can access each other’s private members (fields and methods). This means that the <code>printFilename</code> method in this class will work because it can access the <code>HiddenFilename</code> field in its companion object:</p>
+<pre><code class="language-scala">class SomeClass {
+    def printFilename() = {
+        println(SomeClass.HiddenFilename)
+    }
+}
+
+object SomeClass {
+    private val HiddenFilename = &quot;/tmp/foo.bar&quot;
+}
+</code></pre>
+<p>A companion object offers much more functionality than this, and we’ll demonstrate a few of its most important features in the rest of this lesson.</p>
+<h2 id="creating-new-instances-without-the-new-keyword"><a class="header" href="#creating-new-instances-without-the-new-keyword">Creating new instances without the <code>new</code> keyword</a></h2>
+<p>You probably noticed in some examples in this book that you can create new instances of certain classes without having to use the <code>new</code> keyword before the class name, as in this example:</p>
+<pre><code class="language-scala">val zenMasters = List(
+    Person(&quot;Nansen&quot;),
+    Person(&quot;Joshu&quot;)
+)
+</code></pre>
+<p>This functionality comes from the use of companion objects. What happens is that when you define an <code>apply</code> method in a companion object, it has a special meaning to the Scala compiler. There’s a little syntactic sugar baked into Scala that lets you type this code:</p>
+<pre><code class="language-scala">val p = Person(&quot;Fred Flinstone&quot;)
+</code></pre>
+<p>and during the compilation process the compiler turns that code into this code:</p>
+<pre><code class="language-scala">val p = Person.apply(&quot;Fred Flinstone&quot;)
+</code></pre>
+<p>The <code>apply</code> method in the companion object acts as a <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">Factory Method</a>, and Scala’s syntactic sugar lets you use the syntax shown, creating new class instances without using the <code>new</code> keyword.</p>
+<h3 id="enabling-that-functionality"><a class="header" href="#enabling-that-functionality">Enabling that functionality</a></h3>
+<p>To demonstrate how this feature works, here’s a class named <code>Person</code> along with an <code>apply</code> method in its companion object:</p>
+<pre><code class="language-scala">class Person {
+    var name = &quot;&quot;
+}
+
+object Person {
+    def apply(name: String): Person = {
+        var p = new Person
+        p.name = name
+        p
+    }
+}
+</code></pre>
+<p>To test this code, paste both the class and the object in the Scala REPL at the same time using this technique:</p>
+<ul>
+<li>Start the Scala REPL from your command line (with the <code>scala</code> command)</li>
+<li>Type <code>:paste</code> and press the [Enter] key</li>
+<li>The REPL should respond with this text:</li>
+</ul>
+<pre><code class="language-scala">// Entering paste mode (ctrl-D to finish)
+</code></pre>
+<ul>
+<li>Now paste both the class and object into the REPL at the same time</li>
+<li>Press Ctrl-D to finish the “paste” process</li>
+</ul>
+<p>When that process works you should see this output in the REPL:</p>
+<pre><code>defined class Person
+defined object Person
+</code></pre>
+<blockquote>
+<p>The REPL requires that a class and its companion object be entered at the same time with this technique.</p>
+</blockquote>
+<p>Now you can create a new instance of the <code>Person</code> class like this:</p>
+<pre><code class="language-scala">val p = Person.apply(&quot;Fred Flinstone&quot;)
+</code></pre>
+<p>That code directly calls <code>apply</code> in the companion object. More importantly, you can also create a new instance like this:</p>
+<pre><code class="language-scala">val p = Person(&quot;Fred Flinstone&quot;)
+</code></pre>
+<p>and this:</p>
+<pre><code class="language-scala">val zenMasters = List(
+    Person(&quot;Nansen&quot;),
+    Person(&quot;Joshu&quot;)
+)
+</code></pre>
+<p>To be clear, what happens in this process is:</p>
+<ul>
+<li>You type something like <code>val p = Person(&quot;Fred&quot;)</code></li>
+<li>The Scala compiler sees that there is no <code>new</code> keyword before <code>Person</code></li>
+<li>The compiler looks for an <code>apply</code> method in the companion object of the <code>Person</code> class that matches the type signature you entered</li>
+<li>If it finds an <code>apply</code> method, it uses it; if it doesn’t, you get a compiler error</li>
+</ul>
+<h3 id="creating-multiple-constructors"><a class="header" href="#creating-multiple-constructors">Creating multiple constructors</a></h3>
+<p>You can create multiple <code>apply</code> methods in a companion object to provide multiple constructors. The following code shows how to create both one- and two-argument constructors. Because we introduced <code>Option</code> values in the previous lesson, this example also shows how to use <code>Option</code> in a situation like this:</p>
+<pre><code class="language-scala">class Person {
+    var name: Option[String] = None
+    var age: Option[Int] = None
+    override def toString = s&quot;$name, $age&quot;
+}
+
+object Person {
+
+    // a one-arg constructor
+    def apply(name: Option[String]): Person = {
+        var p = new Person
+        p.name = name
+        p
+    }
+
+    // a two-arg constructor
+    def apply(name: Option[String], age: Option[Int]): Person = {
+        var p = new Person
+        p.name = name
+        p.age = age
+        p
+    }
+
+}
+</code></pre>
+<p>If you paste that code into the REPL as before, you’ll see that you can create new <code>Person</code> instances like this:</p>
+<pre><code class="language-scala">val p1 = Person(Some(&quot;Fred&quot;))
+val p2 = Person(None)
+
+val p3 = Person(Some(&quot;Wilma&quot;), Some(33))
+val p4 = Person(Some(&quot;Wilma&quot;), None)
+</code></pre>
+<p>When you print those values you’ll see these results:</p>
+<pre><code class="language-scala">val p1: Person = Some(Fred), None
+val p2: Person = None, None
+val p3: Person = Some(Wilma), Some(33)
+val p4: Person = Some(Wilma), None
+</code></pre>
+<blockquote>
+<p>When running tests like this, it’s best to clear the REPL’s memory. To do this, use the <code>:reset</code> command inside the REPL before using the <code>:paste</code> command.</p>
+</blockquote>
+<h2 id="adding-an-unapply-method"><a class="header" href="#adding-an-unapply-method">Adding an <code>unapply</code> method</a></h2>
+<p>Just as adding an <code>apply</code> method in a companion object lets you <em>construct</em> new object instances, adding an <code>unapply</code> lets you <em>de-construct</em> object instances. We’ll demonstrate this with an example.</p>
+<p>Here’s a different version of a <code>Person</code> class and a companion object:</p>
+<pre><code class="language-scala">class Person(var name: String, var age: Int)
+
+object Person {
+    def unapply(p: Person): String = s&quot;${p.name}, ${p.age}&quot;
+}
+</code></pre>
+<p>Notice that the companion object defines an <code>unapply</code> method. That method takes an input parameter of the type <code>Person</code>, and returns a <code>String</code>. To test the <code>unapply</code> method manually, first create a new <code>Person</code> instance:</p>
+<pre><code class="language-scala">val p = new Person(&quot;Lori&quot;, 29)
+</code></pre>
+<p>Then test <code>unapply</code> like this:</p>
+<pre><code class="language-scala">val result = Person.unapply(p)
+</code></pre>
+<p>This is what the <code>unapply</code> result looks like in the REPL:</p>
+<pre><code>scala&gt; val result = Person.unapply(p)
+result: String = Lori, 29
+</code></pre>
+<p>As shown, <code>unapply</code> de-constructs the <code>Person</code> instance it’s given. In Scala, when you put an <code>unapply</code> method in a companion object, it’s said that you’ve created an <em>extractor</em> method, because you’ve created a way to extract the fields out of the object.</p>
+<h3 id="unapply-can-return-different-types"><a class="header" href="#unapply-can-return-different-types"><code>unapply</code> can return different types</a></h3>
+<p>In that example <code>unapply</code> returns a <code>String</code>, but you can write it to return anything. Here’s an example that returns the two fields in a tuple:</p>
+<pre><code class="language-scala">class Person(var name: String, var age: Int)
+
+object Person {
+    def unapply(p: Person): Tuple2[String, Int] = (p.name, p.age)
+}
+</code></pre>
+<p>Here’s what that method looks like in the REPL:</p>
+<pre><code class="language-scala">scala&gt; val result = Person.unapply(p)
+result: (String, Int) = (Lori,29)
+</code></pre>
+<p>Because this <code>unapply</code> method returns the class fields as a tuple, you can also do this:</p>
+<pre><code class="language-scala">scala&gt; val (name, age) = Person.unapply(p)
+name: String = Lori
+age: Int = 29
+</code></pre>
+<h3 id="unapply-extractors-in-the-real-world"><a class="header" href="#unapply-extractors-in-the-real-world"><code>unapply</code> extractors in the real world</a></h3>
+<p>A benefit of using <code>unapply</code> to create an extractor is that if you follow the proper Scala conventions, they enable a convenient form of pattern-matching in match expressions.</p>
+<p>We’ll discuss that more in the next lesson, but as you’ll see, the story gets even better: You rarely need to write an <code>unapply</code> method yourself. Instead, what happens is that you get <code>apply</code> and <code>unapply</code> methods for free when you create your classes as <em>case classes</em> rather than as the “regular” Scala classes you’ve seen so far. We’ll dive into case classes in the next lesson.</p>
+<h2 id="key-points"><a class="header" href="#key-points">Key points</a></h2>
+<p>The key points of this lesson are:</p>
+<ul>
+<li>A <em>companion object</em> is an <code>object</code> that’s declared in the same file as a <code>class</code>, and has the same name as the class</li>
+<li>A companion object and its class can access each other’s private members</li>
+<li>A companion object’s <code>apply</code> method lets you create new instances of a class without using the <code>new</code> keyword</li>
+<li>A companion object’s <code>unapply</code> method lets you de-construct an instance of a class into its individual components</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="no-null-values.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="case-classes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="no-null-values.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="case-classes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

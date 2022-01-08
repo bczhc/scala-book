@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>pure-functions.md - Scala Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> introduction.md</a></li><li class="chapter-item expanded "><a href="prelude-taste-of-scala.html"><strong aria-hidden="true">2.</strong> prelude-taste-of-scala.md</a></li><li class="chapter-item expanded "><a href="preliminaries.html"><strong aria-hidden="true">3.</strong> preliminaries.md</a></li><li class="chapter-item expanded "><a href="scala-features.html"><strong aria-hidden="true">4.</strong> scala-features.md</a></li><li class="chapter-item expanded "><a href="hello-world-1.html"><strong aria-hidden="true">5.</strong> hello-world-1.md</a></li><li class="chapter-item expanded "><a href="hello-world-2.html"><strong aria-hidden="true">6.</strong> hello-world-2.md</a></li><li class="chapter-item expanded "><a href="scala-repl.html"><strong aria-hidden="true">7.</strong> scala-repl.md</a></li><li class="chapter-item expanded "><a href="two-types-variables.html"><strong aria-hidden="true">8.</strong> two-types-variables.md</a></li><li class="chapter-item expanded "><a href="type-is-optional.html"><strong aria-hidden="true">9.</strong> type-is-optional.md</a></li><li class="chapter-item expanded "><a href="built-in-types.html"><strong aria-hidden="true">10.</strong> built-in-types.md</a></li><li class="chapter-item expanded "><a href="two-notes-about-strings.html"><strong aria-hidden="true">11.</strong> two-notes-about-strings.md</a></li><li class="chapter-item expanded "><a href="command-line-io.html"><strong aria-hidden="true">12.</strong> command-line-io.md</a></li><li class="chapter-item expanded "><a href="control-structures.html"><strong aria-hidden="true">13.</strong> control-structures.md</a></li><li class="chapter-item expanded "><a href="if-then-else-construct.html"><strong aria-hidden="true">14.</strong> if-then-else-construct.md</a></li><li class="chapter-item expanded "><a href="for-loops.html"><strong aria-hidden="true">15.</strong> for-loops.md</a></li><li class="chapter-item expanded "><a href="for-expressions.html"><strong aria-hidden="true">16.</strong> for-expressions.md</a></li><li class="chapter-item expanded "><a href="match-expressions.html"><strong aria-hidden="true">17.</strong> match-expressions.md</a></li><li class="chapter-item expanded "><a href="try-catch-finally.html"><strong aria-hidden="true">18.</strong> try-catch-finally.md</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">19.</strong> classes.md</a></li><li class="chapter-item expanded "><a href="classes-aux-constructors.html"><strong aria-hidden="true">20.</strong> classes-aux-constructors.md</a></li><li class="chapter-item expanded "><a href="constructors-default-values.html"><strong aria-hidden="true">21.</strong> constructors-default-values.md</a></li><li class="chapter-item expanded "><a href="methods-first-look.html"><strong aria-hidden="true">22.</strong> methods-first-look.md</a></li><li class="chapter-item expanded "><a href="enumerations-pizza-class.html"><strong aria-hidden="true">23.</strong> enumerations-pizza-class.md</a></li><li class="chapter-item expanded "><a href="traits-intro.html"><strong aria-hidden="true">24.</strong> traits-intro.md</a></li><li class="chapter-item expanded "><a href="traits-interfaces.html"><strong aria-hidden="true">25.</strong> traits-interfaces.md</a></li><li class="chapter-item expanded "><a href="traits-abstract-mixins.html"><strong aria-hidden="true">26.</strong> traits-abstract-mixins.md</a></li><li class="chapter-item expanded "><a href="abstract-classes.html"><strong aria-hidden="true">27.</strong> abstract-classes.md</a></li><li class="chapter-item expanded "><a href="collections-101.html"><strong aria-hidden="true">28.</strong> collections-101.md</a></li><li class="chapter-item expanded "><a href="arraybuffer-examples.html"><strong aria-hidden="true">29.</strong> arraybuffer-examples.md</a></li><li class="chapter-item expanded "><a href="list-class.html"><strong aria-hidden="true">30.</strong> list-class.md</a></li><li class="chapter-item expanded "><a href="vector-class.html"><strong aria-hidden="true">31.</strong> vector-class.md</a></li><li class="chapter-item expanded "><a href="map-class.html"><strong aria-hidden="true">32.</strong> map-class.md</a></li><li class="chapter-item expanded "><a href="set-class.html"><strong aria-hidden="true">33.</strong> set-class.md</a></li><li class="chapter-item expanded "><a href="anonymous-functions.html"><strong aria-hidden="true">34.</strong> anonymous-functions.md</a></li><li class="chapter-item expanded "><a href="collections-methods.html"><strong aria-hidden="true">35.</strong> collections-methods.md</a></li><li class="chapter-item expanded "><a href="collections-maps.html"><strong aria-hidden="true">36.</strong> collections-maps.md</a></li><li class="chapter-item expanded "><a href="misc.html"><strong aria-hidden="true">37.</strong> misc.md</a></li><li class="chapter-item expanded "><a href="tuples.html"><strong aria-hidden="true">38.</strong> tuples.md</a></li><li class="chapter-item expanded "><a href="oop-pizza-example.html"><strong aria-hidden="true">39.</strong> oop-pizza-example.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-intro.html"><strong aria-hidden="true">40.</strong> sbt-scalatest-intro.md</a></li><li class="chapter-item expanded "><a href="scala-build-tool-sbt.html"><strong aria-hidden="true">41.</strong> scala-build-tool-sbt.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-tdd.html"><strong aria-hidden="true">42.</strong> sbt-scalatest-tdd.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-bdd.html"><strong aria-hidden="true">43.</strong> sbt-scalatest-bdd.md</a></li><li class="chapter-item expanded "><a href="functional-programming.html"><strong aria-hidden="true">44.</strong> functional-programming.md</a></li><li class="chapter-item expanded "><a href="pure-functions.html" class="active"><strong aria-hidden="true">45.</strong> pure-functions.md</a></li><li class="chapter-item expanded "><a href="passing-functions-around.html"><strong aria-hidden="true">46.</strong> passing-functions-around.md</a></li><li class="chapter-item expanded "><a href="no-null-values.html"><strong aria-hidden="true">47.</strong> no-null-values.md</a></li><li class="chapter-item expanded "><a href="companion-objects.html"><strong aria-hidden="true">48.</strong> companion-objects.md</a></li><li class="chapter-item expanded "><a href="case-classes.html"><strong aria-hidden="true">49.</strong> case-classes.md</a></li><li class="chapter-item expanded "><a href="case-objects.html"><strong aria-hidden="true">50.</strong> case-objects.md</a></li><li class="chapter-item expanded "><a href="functional-error-handling.html"><strong aria-hidden="true">51.</strong> functional-error-handling.md</a></li><li class="chapter-item expanded "><a href="concurrency-signpost.html"><strong aria-hidden="true">52.</strong> concurrency-signpost.md</a></li><li class="chapter-item expanded "><a href="futures.html"><strong aria-hidden="true">53.</strong> futures.md</a></li><li class="chapter-item expanded "><a href="where-next.html"><strong aria-hidden="true">54.</strong> where-next.md</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scala Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>type: section
+layout: multipage-overview
+title: Pure Functions
+description: This lesson provides an introduction to writing pure functions in Scala.
+partof: scala_book
+overview-name: Scala Book
+discourse: true
+num: 45
+outof: 54
+previous-page: functional-programming
+next-page: passing-functions-around</h2>
+<p>A first feature Scala offers to help you write functional code is the ability to write pure functions. In <a href="https://alvinalexander.com/scala/functional-programming-simplified-book">Functional Programming, Simplified</a>, Alvin Alexander defines a <em>pure function</em> like this:</p>
+<ul>
+<li>The function’s output depends <em>only</em> on its input variables</li>
+<li>It doesn’t mutate any hidden state</li>
+<li>It doesn’t have any “back doors”: It doesn’t read data from the outside world (including the console, web services, databases, files, etc.), or write data to the outside world</li>
+</ul>
+<p>As a result of this definition, any time you call a pure function with the same input value(s), you’ll always get the same result. For example, you can call a <code>double</code> function an infinite number of times with the input value <code>2</code>, and you’ll always get the result <code>4</code>.</p>
+<h2 id="examples-of-pure-functions"><a class="header" href="#examples-of-pure-functions">Examples of pure functions</a></h2>
+<p>Given that definition of pure functions, as you might imagine, methods like these in the <em>scala.math._</em> package are pure functions:</p>
+<ul>
+<li><code>abs</code></li>
+<li><code>ceil</code></li>
+<li><code>max</code></li>
+<li><code>min</code></li>
+</ul>
+<p>These Scala <code>String</code> methods are also pure functions:</p>
+<ul>
+<li><code>isEmpty</code></li>
+<li><code>length</code></li>
+<li><code>substring</code></li>
+</ul>
+<p>Many methods on the Scala collections classes also work as pure functions, including <code>drop</code>, <code>filter</code>, and <code>map</code>.</p>
+<h2 id="examples-of-impure-functions"><a class="header" href="#examples-of-impure-functions">Examples of impure functions</a></h2>
+<p>Conversely, the following functions are <em>impure</em> because they violate the definition.</p>
+<p>The <code>foreach</code> method on collections classes is impure because it’s only used for its side effects, such as printing to STDOUT.</p>
+<blockquote>
+<p>A great hint that <code>foreach</code> is impure is that it’s method signature declares that it returns the type <code>Unit</code>. Because it returns nothing, logically the only reason you ever call it is to achieve some side effect. Similarly, <em>any</em> method that returns <code>Unit</code> is going to be an impure function.</p>
+</blockquote>
+<p>Date and time related methods like <code>getDayOfWeek</code>, <code>getHour</code>, and <code>getMinute</code> are all impure because their output depends on something other than their input parameters. Their results rely on some form of hidden I/O, <em>hidden input</em> in these examples.</p>
+<p>In general, impure functions do one or more of these things:</p>
+<ul>
+<li>Read hidden inputs, i.e., they access variables and data not explicitly passed into the function as input parameters</li>
+<li>Write hidden outputs</li>
+<li>Mutate the parameters they are given</li>
+<li>Perform some sort of I/O with the outside world</li>
+</ul>
+<h2 id="but-impure-functions-are-needed-"><a class="header" href="#but-impure-functions-are-needed-">But impure functions are needed ...</a></h2>
+<p>Of course an application isn’t very useful if it can’t read or write to the outside world, so people make this recommendation:</p>
+<blockquote>
+<p>Write the core of your application using pure functions, and then write an impure “wrapper” around that core to interact with the outside world. If you like food analogies, this is like putting a layer of impure icing on top of a pure cake.</p>
+</blockquote>
+<p>There are ways to make impure interactions with the outside world feel a little more pure. For instance, you’ll hear about things like the <code>IO</code> Monad for dealing with user input, files, networks, and databases. But in the end, FP applications have a core of pure functions combined with other functions to interact with the outside world.</p>
+<h2 id="writing-pure-functions"><a class="header" href="#writing-pure-functions">Writing pure functions</a></h2>
+<p>Writing pure functions in Scala is one of the simpler parts about functional programming: You just write pure functions using Scala’s method syntax. Here’s a pure function that doubles the input value it’s given:</p>
+<pre><code class="language-scala">def double(i: Int): Int = i * 2
+</code></pre>
+<p>Although recursion isn’t covered in this book, if you like a good “challenge” example, here’s a pure function that calculates the sum of a list of integers (<code>List[Int]</code>):</p>
+<pre><code class="language-scala">def sum(list: List[Int]): Int = list match {
+    case Nil =&gt; 0
+    case head :: tail =&gt; head + sum(tail)
+}
+</code></pre>
+<p>Even though we haven’t covered recursion, if you can understand that code, you’ll see that it meets my definition of a pure function.</p>
+<h2 id="key-points"><a class="header" href="#key-points">Key points</a></h2>
+<p>The first key point of this lesson is the definition of a pure function:</p>
+<blockquote>
+<p>A <em>pure function</em> is a function that depends only on its declared inputs and its internal algorithm to produce its output. It does not read any other values from “the outside world” — the world outside of the function’s scope — and it does not modify any values in the outside world.</p>
+</blockquote>
+<p>A second key point is that real-world applications consist of a combination of pure and impure functions. A common recommendation is to write the core of your application using pure functions, and then to use impure functions to communicate with the outside world.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="functional-programming.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="passing-functions-around.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="functional-programming.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="passing-functions-around.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

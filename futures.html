@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>futures.md - Scala Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> introduction.md</a></li><li class="chapter-item expanded "><a href="prelude-taste-of-scala.html"><strong aria-hidden="true">2.</strong> prelude-taste-of-scala.md</a></li><li class="chapter-item expanded "><a href="preliminaries.html"><strong aria-hidden="true">3.</strong> preliminaries.md</a></li><li class="chapter-item expanded "><a href="scala-features.html"><strong aria-hidden="true">4.</strong> scala-features.md</a></li><li class="chapter-item expanded "><a href="hello-world-1.html"><strong aria-hidden="true">5.</strong> hello-world-1.md</a></li><li class="chapter-item expanded "><a href="hello-world-2.html"><strong aria-hidden="true">6.</strong> hello-world-2.md</a></li><li class="chapter-item expanded "><a href="scala-repl.html"><strong aria-hidden="true">7.</strong> scala-repl.md</a></li><li class="chapter-item expanded "><a href="two-types-variables.html"><strong aria-hidden="true">8.</strong> two-types-variables.md</a></li><li class="chapter-item expanded "><a href="type-is-optional.html"><strong aria-hidden="true">9.</strong> type-is-optional.md</a></li><li class="chapter-item expanded "><a href="built-in-types.html"><strong aria-hidden="true">10.</strong> built-in-types.md</a></li><li class="chapter-item expanded "><a href="two-notes-about-strings.html"><strong aria-hidden="true">11.</strong> two-notes-about-strings.md</a></li><li class="chapter-item expanded "><a href="command-line-io.html"><strong aria-hidden="true">12.</strong> command-line-io.md</a></li><li class="chapter-item expanded "><a href="control-structures.html"><strong aria-hidden="true">13.</strong> control-structures.md</a></li><li class="chapter-item expanded "><a href="if-then-else-construct.html"><strong aria-hidden="true">14.</strong> if-then-else-construct.md</a></li><li class="chapter-item expanded "><a href="for-loops.html"><strong aria-hidden="true">15.</strong> for-loops.md</a></li><li class="chapter-item expanded "><a href="for-expressions.html"><strong aria-hidden="true">16.</strong> for-expressions.md</a></li><li class="chapter-item expanded "><a href="match-expressions.html"><strong aria-hidden="true">17.</strong> match-expressions.md</a></li><li class="chapter-item expanded "><a href="try-catch-finally.html"><strong aria-hidden="true">18.</strong> try-catch-finally.md</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">19.</strong> classes.md</a></li><li class="chapter-item expanded "><a href="classes-aux-constructors.html"><strong aria-hidden="true">20.</strong> classes-aux-constructors.md</a></li><li class="chapter-item expanded "><a href="constructors-default-values.html"><strong aria-hidden="true">21.</strong> constructors-default-values.md</a></li><li class="chapter-item expanded "><a href="methods-first-look.html"><strong aria-hidden="true">22.</strong> methods-first-look.md</a></li><li class="chapter-item expanded "><a href="enumerations-pizza-class.html"><strong aria-hidden="true">23.</strong> enumerations-pizza-class.md</a></li><li class="chapter-item expanded "><a href="traits-intro.html"><strong aria-hidden="true">24.</strong> traits-intro.md</a></li><li class="chapter-item expanded "><a href="traits-interfaces.html"><strong aria-hidden="true">25.</strong> traits-interfaces.md</a></li><li class="chapter-item expanded "><a href="traits-abstract-mixins.html"><strong aria-hidden="true">26.</strong> traits-abstract-mixins.md</a></li><li class="chapter-item expanded "><a href="abstract-classes.html"><strong aria-hidden="true">27.</strong> abstract-classes.md</a></li><li class="chapter-item expanded "><a href="collections-101.html"><strong aria-hidden="true">28.</strong> collections-101.md</a></li><li class="chapter-item expanded "><a href="arraybuffer-examples.html"><strong aria-hidden="true">29.</strong> arraybuffer-examples.md</a></li><li class="chapter-item expanded "><a href="list-class.html"><strong aria-hidden="true">30.</strong> list-class.md</a></li><li class="chapter-item expanded "><a href="vector-class.html"><strong aria-hidden="true">31.</strong> vector-class.md</a></li><li class="chapter-item expanded "><a href="map-class.html"><strong aria-hidden="true">32.</strong> map-class.md</a></li><li class="chapter-item expanded "><a href="set-class.html"><strong aria-hidden="true">33.</strong> set-class.md</a></li><li class="chapter-item expanded "><a href="anonymous-functions.html"><strong aria-hidden="true">34.</strong> anonymous-functions.md</a></li><li class="chapter-item expanded "><a href="collections-methods.html"><strong aria-hidden="true">35.</strong> collections-methods.md</a></li><li class="chapter-item expanded "><a href="collections-maps.html"><strong aria-hidden="true">36.</strong> collections-maps.md</a></li><li class="chapter-item expanded "><a href="misc.html"><strong aria-hidden="true">37.</strong> misc.md</a></li><li class="chapter-item expanded "><a href="tuples.html"><strong aria-hidden="true">38.</strong> tuples.md</a></li><li class="chapter-item expanded "><a href="oop-pizza-example.html"><strong aria-hidden="true">39.</strong> oop-pizza-example.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-intro.html"><strong aria-hidden="true">40.</strong> sbt-scalatest-intro.md</a></li><li class="chapter-item expanded "><a href="scala-build-tool-sbt.html"><strong aria-hidden="true">41.</strong> scala-build-tool-sbt.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-tdd.html"><strong aria-hidden="true">42.</strong> sbt-scalatest-tdd.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-bdd.html"><strong aria-hidden="true">43.</strong> sbt-scalatest-bdd.md</a></li><li class="chapter-item expanded "><a href="functional-programming.html"><strong aria-hidden="true">44.</strong> functional-programming.md</a></li><li class="chapter-item expanded "><a href="pure-functions.html"><strong aria-hidden="true">45.</strong> pure-functions.md</a></li><li class="chapter-item expanded "><a href="passing-functions-around.html"><strong aria-hidden="true">46.</strong> passing-functions-around.md</a></li><li class="chapter-item expanded "><a href="no-null-values.html"><strong aria-hidden="true">47.</strong> no-null-values.md</a></li><li class="chapter-item expanded "><a href="companion-objects.html"><strong aria-hidden="true">48.</strong> companion-objects.md</a></li><li class="chapter-item expanded "><a href="case-classes.html"><strong aria-hidden="true">49.</strong> case-classes.md</a></li><li class="chapter-item expanded "><a href="case-objects.html"><strong aria-hidden="true">50.</strong> case-objects.md</a></li><li class="chapter-item expanded "><a href="functional-error-handling.html"><strong aria-hidden="true">51.</strong> functional-error-handling.md</a></li><li class="chapter-item expanded "><a href="concurrency-signpost.html"><strong aria-hidden="true">52.</strong> concurrency-signpost.md</a></li><li class="chapter-item expanded "><a href="futures.html" class="active"><strong aria-hidden="true">53.</strong> futures.md</a></li><li class="chapter-item expanded "><a href="where-next.html"><strong aria-hidden="true">54.</strong> where-next.md</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scala Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>type: section
+layout: multipage-overview
+title: Scala Futures
+description: This page provides an introduction to Futures in Scala, including Future callback methods.
+partof: scala_book
+overview-name: Scala Book
+discourse: true
+num: 53
+outof: 54
+previous-page: concurrency-signpost
+next-page: where-next</h2>
+<p>When you want to write parallel and concurrent applications in Scala, you <em>could</em> still use the native Java <code>Thread</code> — but the Scala <a href="https://www.scala-lang.org/api/current/scala/concurrent/Future$.html">Future</a> makes parallel/concurrent programming much simpler, and it’s preferred.</p>
+<p>Here’s a description of <code>Future</code> from its Scaladoc:</p>
+<blockquote>
+<p>“A Future represents a value which may or may not <em>currently</em> be available, but will be available at some point, or an exception if that value could not be made available.” </p>
+</blockquote>
+<h3 id="thinking-in-futures"><a class="header" href="#thinking-in-futures">Thinking in futures</a></h3>
+<p>To help demonstrate this, in single-threaded programming you bind the result of a function call to a variable like this:</p>
+<pre><code class="language-scala">def aShortRunningTask(): Int = 42
+val x = aShortRunningTask
+</code></pre>
+<p>With code like that, the value <code>42</code> is bound to the variable <code>x</code> immediately.</p>
+<p>When you’re working with a <code>Future</code>, the assignment process looks similar:</p>
+<pre><code class="language-scala">def aLongRunningTask(): Future[Int] = ???
+val x = aLongRunningTask
+</code></pre>
+<p>But because <code>aLongRunningTask</code> takes an indeterminate amount of time to return, the value in <code>x</code> may or may not be <em>currently</em> available, but it will be available at some point (in the future).</p>
+<p>Another important point to know about futures is that they’re intended as a one-shot, “Handle this relatively slow computation on some other thread, and call me back with a result when you’re done” construct. (As a point of comparison, <a href="https://akka.io">Akka</a> actors are intended to run for a long time and respond to many requests during their lifetime, but each future you create is intended to be run only once.)</p>
+<p>In this lesson you’ll see how to use futures, including how to run multiple futures in parallel and combine their results in a for-expression, along with other methods that are used to handle the value in a future once it returns.</p>
+<blockquote>
+<p>Tip: If you’re just starting to work with futures and find the name <code>Future</code> to be confusing in the following examples, replace it with the name <code>ConcurrentResult</code>, which might be easier to understand initially.</p>
+</blockquote>
+<h2 id="source-code"><a class="header" href="#source-code">Source code</a></h2>
+<p>You can find the source code for this lesson at this URL:</p>
+<ul>
+<li><a href="https://github.com/alvinj/HelloScalaFutures">github.com/alvinj/HelloScalaFutures</a></li>
+</ul>
+<h2 id="an-example-in-the-repl"><a class="header" href="#an-example-in-the-repl">An example in the REPL</a></h2>
+<p>A Scala <code>Future</code> is used to create a temporary pocket of concurrency that you use for one-shot needs. You typically use it when you need to call an algorithm that runs an indeterminate amount of time — such as calling a web service or executing a long-running algorithm — so you therefore want to run it off of the main thread.</p>
+<p>To demonstrate how this works, let’s start with an example of a <code>Future</code> in the Scala REPL. First, paste in these <code>import</code> statements:</p>
+<pre><code class="language-scala">import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.util.{Failure, Success}
+</code></pre>
+<p>Now, you’re ready to create a future. For example, here’s a future that sleeps for ten seconds and then returns the value <code>42</code>:</p>
+<pre><code class="language-scala">scala&gt; val a = Future { Thread.sleep(10*1000); 42 }
+a: scala.concurrent.Future[Int] = Future(&lt;not completed&gt;)
+</code></pre>
+<p>While that’s a simple example, it shows the basic approach: Just construct a new <code>Future</code> with your long-running algorithm.</p>
+<p>Because a <code>Future</code> has a <code>map</code> function, you use it as usual:</p>
+<pre><code class="language-scala">scala&gt; val b = a.map(_ * 2)
+b: scala.concurrent.Future[Int] = Future(&lt;not completed&gt;)
+</code></pre>
+<p>Initially this shows <code>Future(&lt;not completed&gt;)</code>, but if you check <code>b</code>’s value you’ll see that it eventually contains the expected result of <code>84</code>:</p>
+<pre><code class="language-scala">scala&gt; b
+res1: scala.concurrent.Future[Int] = Future(Success(84))
+</code></pre>
+<p>Notice that the <code>84</code> you expected is wrapped in a <code>Success</code>, which is further wrapped in a <code>Future</code>. This is a key point to know: The value in a <code>Future</code> is always an instance of one of the <code>Try</code> types: <code>Success</code> or <code>Failure</code>. Therefore, when working with the result of a future, use the usual <code>Try</code>-handling techniques, or one of the other <code>Future</code> callback methods.</p>
+<p>One commonly used callback method is <code>onComplete</code>, which takes a <a href="https://alvinalexander.com/scala/how-to-define-use-partial-functions-in-scala-syntax-examples">partial function</a> in which you should handle the <code>Success</code> and <code>Failure</code> cases, like this:</p>
+<pre><code class="language-scala">a.onComplete {
+    case Success(value) =&gt; println(s&quot;Got the callback, value = $value&quot;)
+    case Failure(e) =&gt; e.printStackTrace
+}
+</code></pre>
+<p>When you paste that code in the REPL you’ll see the result:</p>
+<pre><code class="language-scala">Got the callback, value = 42
+</code></pre>
+<p>There are other ways to process the results from futures, and the most common methods are listed later in this lesson.</p>
+<h2 id="an-example-application"><a class="header" href="#an-example-application">An example application</a></h2>
+<p>The following application (<code>App</code>) provides an introduction to using multiple futures. It shows several key points about how to work with futures:</p>
+<ul>
+<li>How to create futures</li>
+<li>How to combine multiple futures in a <code>for</code> expression to obtain a single result</li>
+<li>How to work with that result once you have it</li>
+</ul>
+<h3 id="a-potentially-slow-running-method"><a class="header" href="#a-potentially-slow-running-method">A potentially slow-running method</a></h3>
+<p>First, imagine you have a method that accesses a web service to get the current price of a stock. Because it’s a web service it can be slow to return, and even fail. As a result, you create a method to run as a <code>Future</code>. It takes a stock symbol as an input parameter and returns the stock price as a <code>Double</code> inside a <code>Future</code>, so its signature looks like this:</p>
+<pre><code class="language-scala">def getStockPrice(stockSymbol: String): Future[Double] = ???
+</code></pre>
+<p>To keep this tutorial simple we won’t access a real web service, so we’ll mock up a method that has a random run time before returning a result:</p>
+<pre><code class="language-scala">def getStockPrice(stockSymbol: String): Future[Double] = Future {
+    val r = scala.util.Random
+    val randomSleepTime = r.nextInt(3000)
+    val randomPrice = r.nextDouble * 1000
+    sleep(randomSleepTime)
+    randomPrice
+}
+</code></pre>
+<p>That method sleeps a random time up to 3000 ms, and also returns a random stock price. Notice how simple it is to create a method that runs as a <code>Future</code>: Just pass a block of code into the <code>Future</code> constructor to create the method body.</p>
+<p>Next, imagine that you’re instructed to get three stock prices in parallel, and return their results once all three return. To do so, you write code like this:</p>
+<pre><code class="language-scala">package futures
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
+import scala.util.{Failure, Success}
+
+object MultipleFutures extends App {
+
+    // use this to determine the “delta time” below
+    val startTime = currentTime
+
+    // (a) create three futures
+    val aaplFuture = getStockPrice(&quot;AAPL&quot;)
+    val amznFuture = getStockPrice(&quot;AMZN&quot;)
+    val googFuture = getStockPrice(&quot;GOOG&quot;)
+
+    // (b) get a combined result in a for-expression
+    val result: Future[(Double, Double, Double)] = for {
+        aapl &lt;- aaplFuture
+        amzn &lt;- amznFuture
+        goog &lt;- googFuture
+    } yield (aapl, amzn, goog)
+
+    // (c) do whatever you need to do with the results
+    result.onComplete {
+        case Success(x) =&gt; {
+            val totalTime = deltaTime(startTime)
+            println(s&quot;In Success case, time delta: ${totalTime}&quot;)
+            println(s&quot;The stock prices are: $x&quot;)
+        }
+        case Failure(e) =&gt; e.printStackTrace
+    }
+
+    // important for a short parallel demo: you need to keep
+    // the jvm’s main thread alive
+    sleep(5000)
+
+    def sleep(time: Long): Unit = Thread.sleep(time)
+
+    // a simulated web service
+    def getStockPrice(stockSymbol: String): Future[Double] = Future {
+        val r = scala.util.Random
+        val randomSleepTime = r.nextInt(3000)
+        println(s&quot;For $stockSymbol, sleep time is $randomSleepTime&quot;)
+        val randomPrice = r.nextDouble * 1000
+        sleep(randomSleepTime)
+        randomPrice
+    }
+
+    def currentTime = System.currentTimeMillis()
+    def deltaTime(t0: Long) = currentTime - t0
+
+}
+</code></pre>
+<p>Question: If everything truly runs in parallel, can you guess what the maximum value of the <code>totalTime</code> will be?</p>
+<p>Answer: Because the three simulated web service calls do run in parallel, the total time should never be much longer than three seconds (3000ms). If they were run in series, the algorithm might run up to nine seconds.</p>
+<p>This can be a fun little application to experiment with, so you’re encouraged to clone the Github project and run it before continuing this lesson. When you do so, first run it to make sure it works as expected, then change it as desired. If you run into problems, add <code>println</code> statements to the code so you can completely understand how it works.</p>
+<blockquote>
+<p>Tip: The Github repository for this lesson also contains a class named <code>MultipleFuturesWithDebugOutput</code> that contains the same code with a lot of debug <code>println</code> statements.</p>
+</blockquote>
+<h3 id="creating-the-futures"><a class="header" href="#creating-the-futures">Creating the futures</a></h3>
+<p>Let’s walk through that code to see how it works. First, we create three futures with these lines of code:</p>
+<pre><code class="language-scala">val aaplFuture = getStockPrice(&quot;AAPL&quot;)
+val amznFuture = getStockPrice(&quot;AMZN&quot;)
+val googFuture = getStockPrice(&quot;GOOG&quot;)
+</code></pre>
+<p>As you saw, <code>getStockPrice</code> is defined like this:</p>
+<pre><code class="language-scala">def getStockPrice(stockSymbol: String): Future[Double] = Future { ...
+</code></pre>
+<p>If you remember the lesson on companion objects, the way the body of that method works is that the code in between the curly braces is passed into the <code>apply</code> method of <code>Future</code>’s companion object, so the compiler translates that code to something like this:</p>
+<pre><code class="language-scala">def getStockPrice ... = Future.apply { method body here }
+                               -----
+</code></pre>
+<p>An important thing to know about <code>Future</code> is that it <em>immediately</em> begins running the block of code inside the curly braces — it isn’t like the Java <code>Thread</code>, where you create an instance and later call its <code>start</code> method. You can see this very clearly in the debug output of the <code>MultipleFuturesWithDebugOutput</code> example, where the debug output in <code>getStockPrice</code> prints three times when the AAPL, AMZN, and GOOG futures are created, almost immediately after the application is started.</p>
+<p>The three method calls eventually return the simulated stock prices. In fact, people often use the word <em>eventually</em> with futures because you typically use them when the return time of the algorithm is indeterminate: You don’t know when you’ll get a result back, you just hope to get a successful result back “eventually” (though you may also get an unsuccessful result).</p>
+<h3 id="the-for-expression"><a class="header" href="#the-for-expression">The <code>for</code> expression</a></h3>
+<p>The <code>for</code> expression in the application looks like this:</p>
+<pre><code class="language-scala">val result: Future[(Double, Double, Double)] = for {
+    aapl &lt;- aaplFuture
+    amzn &lt;- amznFuture
+    goog &lt;- googFuture
+} yield (aapl, amzn, goog)
+</code></pre>
+<p>You can read this as, “Whenever <code>aapl</code>, <code>amzn</code>, and <code>goog</code> all return with their values, combine them in a tuple, and assign that value to the variable <code>result</code>.” As shown, <code>result</code> has the type <code>Future[(Double, Double, Double)]</code>, which is a tuple that contains three <code>Double</code> values, wrapped in a <code>Future</code> container.</p>
+<p>It’s important to know that the application’s main thread doesn’t stop when <code>getStockPrice</code> is called, and it doesn’t stop at this for-expression either. In fact, if you print the result from <code>System.currentTimeMillis()</code> before and after the for-expression, you probably won’t see a difference of more than a few milliseconds. You can see that for yourself in the <code>MultipleFuturesWithDebugOutput</code> example.</p>
+<h2 id="oncomplete"><a class="header" href="#oncomplete">onComplete</a></h2>
+<p>The final part of the application looks like this:</p>
+<pre><code class="language-scala">result.onComplete {
+    case Success(x) =&gt; {
+        val totalTime = deltaTime(startTime)
+        println(s&quot;In Success case, time delta: ${totalTime}&quot;)
+        println(s&quot;The stock prices are: $x&quot;)
+    }
+    case Failure(e) =&gt; e.printStackTrace
+}
+</code></pre>
+<p><code>onComplete</code> is a method that’s available on a <code>Future</code>, and you use it to process the future’s result as a side effect. In the same way that the <code>foreach</code> method on collections classes returns <code>Unit</code> and is only used for side effects, <code>onComplete</code> returns <code>Unit</code> and you only use it for side effects like printing the results, updating a GUI, updating a database, etc.</p>
+<p>You can read that code as, “Whenever <code>result</code> has a final value — i.e., after all of the futures return in the for-expression — come here. If everything returned successfully, run the <code>println</code> statement shown in the <code>Success</code> case. Otherwise, if an exception was thrown, go to the <code>Failure</code> case and print the exception’s stack trace.”</p>
+<p>As that code implies, it’s completely possible that a <code>Future</code> may fail. For example, imagine that you call a web service, but the web service is down. That <code>Future</code> instance will contain an exception, so when you call <code>result.onComplete</code> like this, control will flow to the <code>Failure</code> case.</p>
+<p>It’s important to note that just as the JVM’s main thread didn’t stop at the for-expression, it doesn’t block here, either. The code inside <code>onComplete</code> doesn’t execute until after the for-expression assigns a value to <code>result</code>.</p>
+<h3 id="about-that-sleep-call"><a class="header" href="#about-that-sleep-call">About that <code>sleep</code> call</a></h3>
+<p>A final point to note about small examples like this is that you need to have a <code>sleep</code> call at the end of your <code>App</code>:</p>
+<pre><code class="language-scala">sleep(5000)
+</code></pre>
+<p>That call keeps the main thread of the JVM alive for five seconds. If you don’t include a call like this, the JVM’s main thread will exit before you get a result from the three futures, which are running on other threads. This isn’t usually a problem in the real world, but it’s needed for little demos like this.</p>
+<h3 id="the-other-code"><a class="header" href="#the-other-code">The other code</a></h3>
+<p>There are a few <code>println</code> statements in the code that use these methods:</p>
+<pre><code class="language-scala">def currentTime = System.currentTimeMillis()
+def deltaTime(t0: Long) = System.currentTimeMillis() - t0
+</code></pre>
+<p>There are only a few <code>println</code> statements in this code, so you can focus on how the main parts of the application works. However, as you’ll see in the Github code, there are many more <code>println</code> statements in the <code>MultipleFuturesWithDebugOutput</code> example so you can see exactly how futures work.</p>
+<h2 id="other-future-methods"><a class="header" href="#other-future-methods">Other Future methods</a></h2>
+<p>Futures have other methods that you can use. Common callback methods are:</p>
+<ul>
+<li><code>onComplete</code></li>
+<li><code>onSuccess</code></li>
+<li><code>onFailure</code></li>
+</ul>
+<p>In addition to those methods, futures have methods that you’ll find on Scala collections classes, including:</p>
+<ul>
+<li><code>filter</code></li>
+<li><code>foreach</code></li>
+<li><code>map</code></li>
+</ul>
+<p>Other useful and well-named methods include:</p>
+<ul>
+<li><code>andThen</code></li>
+<li><code>fallbackTo</code></li>
+<li><code>recoverWith</code></li>
+</ul>
+<p>These methods and many more details are discussed on the <a href="%7B%7Bsite.baseurl%7D%7D/overviews/core/futures.html">“Futures and Promises” page</a>.</p>
+<h2 id="key-points"><a class="header" href="#key-points">Key points</a></h2>
+<p>While this was a short introduction, hopefully those examples give you an idea of how Scala futures work. A few key points about futures are:</p>
+<ul>
+<li>You construct futures to run tasks off of the main thread</li>
+<li>Futures are intended for one-shot, potentially long-running concurrent tasks that <em>eventually</em> return a value</li>
+<li>A future starts running as soon as you construct it</li>
+<li>A benefit of futures over threads is that they come with a variety of callback methods that simplify the process of working with concurrent threads,
+including the handling of exceptions and thread management</li>
+<li>Handle the result of a future with methods like <code>onComplete</code>, or combinator methods like <code>map</code>, <code>flatMap</code>, <code>filter</code>, <code>andThen</code>, etc.</li>
+<li>The value in a <code>Future</code> is always an instance of one of the <code>Try</code> types: <code>Success</code> or <code>Failure</code></li>
+<li>If you’re using multiple futures to yield a single result, you’ll often want to combine them in a for-expression</li>
+</ul>
+<h2 id="see-also"><a class="header" href="#see-also">See also</a></h2>
+<ul>
+<li>A small demo GUI application named <em>Future Board</em> was written to accompany this lesson. It works a little like <a href="https://flipboard.com">Flipboard</a>, updating a group of news sources simultaneously. You can find the source code for Future Board in <a href="https://github.com/alvinj/FPFutures">this Github repository</a>.</li>
+<li>While futures are intended for one-short, relatively short-lived concurrent processes, <a href="https://akka.io">Akka</a> is an “actor model” library for Scala, and provides a terrific way to implement long-running parallel processes. (If this term is new to you, an <em>actor</em> is a long-running process that runs in parallel to the main application thread, and responds to messages that are sent to it.)</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="concurrency-signpost.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="where-next.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="concurrency-signpost.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="where-next.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

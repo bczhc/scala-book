@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>prelude-taste-of-scala.md - Scala Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> introduction.md</a></li><li class="chapter-item expanded "><a href="prelude-taste-of-scala.html" class="active"><strong aria-hidden="true">2.</strong> prelude-taste-of-scala.md</a></li><li class="chapter-item expanded "><a href="preliminaries.html"><strong aria-hidden="true">3.</strong> preliminaries.md</a></li><li class="chapter-item expanded "><a href="scala-features.html"><strong aria-hidden="true">4.</strong> scala-features.md</a></li><li class="chapter-item expanded "><a href="hello-world-1.html"><strong aria-hidden="true">5.</strong> hello-world-1.md</a></li><li class="chapter-item expanded "><a href="hello-world-2.html"><strong aria-hidden="true">6.</strong> hello-world-2.md</a></li><li class="chapter-item expanded "><a href="scala-repl.html"><strong aria-hidden="true">7.</strong> scala-repl.md</a></li><li class="chapter-item expanded "><a href="two-types-variables.html"><strong aria-hidden="true">8.</strong> two-types-variables.md</a></li><li class="chapter-item expanded "><a href="type-is-optional.html"><strong aria-hidden="true">9.</strong> type-is-optional.md</a></li><li class="chapter-item expanded "><a href="built-in-types.html"><strong aria-hidden="true">10.</strong> built-in-types.md</a></li><li class="chapter-item expanded "><a href="two-notes-about-strings.html"><strong aria-hidden="true">11.</strong> two-notes-about-strings.md</a></li><li class="chapter-item expanded "><a href="command-line-io.html"><strong aria-hidden="true">12.</strong> command-line-io.md</a></li><li class="chapter-item expanded "><a href="control-structures.html"><strong aria-hidden="true">13.</strong> control-structures.md</a></li><li class="chapter-item expanded "><a href="if-then-else-construct.html"><strong aria-hidden="true">14.</strong> if-then-else-construct.md</a></li><li class="chapter-item expanded "><a href="for-loops.html"><strong aria-hidden="true">15.</strong> for-loops.md</a></li><li class="chapter-item expanded "><a href="for-expressions.html"><strong aria-hidden="true">16.</strong> for-expressions.md</a></li><li class="chapter-item expanded "><a href="match-expressions.html"><strong aria-hidden="true">17.</strong> match-expressions.md</a></li><li class="chapter-item expanded "><a href="try-catch-finally.html"><strong aria-hidden="true">18.</strong> try-catch-finally.md</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">19.</strong> classes.md</a></li><li class="chapter-item expanded "><a href="classes-aux-constructors.html"><strong aria-hidden="true">20.</strong> classes-aux-constructors.md</a></li><li class="chapter-item expanded "><a href="constructors-default-values.html"><strong aria-hidden="true">21.</strong> constructors-default-values.md</a></li><li class="chapter-item expanded "><a href="methods-first-look.html"><strong aria-hidden="true">22.</strong> methods-first-look.md</a></li><li class="chapter-item expanded "><a href="enumerations-pizza-class.html"><strong aria-hidden="true">23.</strong> enumerations-pizza-class.md</a></li><li class="chapter-item expanded "><a href="traits-intro.html"><strong aria-hidden="true">24.</strong> traits-intro.md</a></li><li class="chapter-item expanded "><a href="traits-interfaces.html"><strong aria-hidden="true">25.</strong> traits-interfaces.md</a></li><li class="chapter-item expanded "><a href="traits-abstract-mixins.html"><strong aria-hidden="true">26.</strong> traits-abstract-mixins.md</a></li><li class="chapter-item expanded "><a href="abstract-classes.html"><strong aria-hidden="true">27.</strong> abstract-classes.md</a></li><li class="chapter-item expanded "><a href="collections-101.html"><strong aria-hidden="true">28.</strong> collections-101.md</a></li><li class="chapter-item expanded "><a href="arraybuffer-examples.html"><strong aria-hidden="true">29.</strong> arraybuffer-examples.md</a></li><li class="chapter-item expanded "><a href="list-class.html"><strong aria-hidden="true">30.</strong> list-class.md</a></li><li class="chapter-item expanded "><a href="vector-class.html"><strong aria-hidden="true">31.</strong> vector-class.md</a></li><li class="chapter-item expanded "><a href="map-class.html"><strong aria-hidden="true">32.</strong> map-class.md</a></li><li class="chapter-item expanded "><a href="set-class.html"><strong aria-hidden="true">33.</strong> set-class.md</a></li><li class="chapter-item expanded "><a href="anonymous-functions.html"><strong aria-hidden="true">34.</strong> anonymous-functions.md</a></li><li class="chapter-item expanded "><a href="collections-methods.html"><strong aria-hidden="true">35.</strong> collections-methods.md</a></li><li class="chapter-item expanded "><a href="collections-maps.html"><strong aria-hidden="true">36.</strong> collections-maps.md</a></li><li class="chapter-item expanded "><a href="misc.html"><strong aria-hidden="true">37.</strong> misc.md</a></li><li class="chapter-item expanded "><a href="tuples.html"><strong aria-hidden="true">38.</strong> tuples.md</a></li><li class="chapter-item expanded "><a href="oop-pizza-example.html"><strong aria-hidden="true">39.</strong> oop-pizza-example.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-intro.html"><strong aria-hidden="true">40.</strong> sbt-scalatest-intro.md</a></li><li class="chapter-item expanded "><a href="scala-build-tool-sbt.html"><strong aria-hidden="true">41.</strong> scala-build-tool-sbt.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-tdd.html"><strong aria-hidden="true">42.</strong> sbt-scalatest-tdd.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-bdd.html"><strong aria-hidden="true">43.</strong> sbt-scalatest-bdd.md</a></li><li class="chapter-item expanded "><a href="functional-programming.html"><strong aria-hidden="true">44.</strong> functional-programming.md</a></li><li class="chapter-item expanded "><a href="pure-functions.html"><strong aria-hidden="true">45.</strong> pure-functions.md</a></li><li class="chapter-item expanded "><a href="passing-functions-around.html"><strong aria-hidden="true">46.</strong> passing-functions-around.md</a></li><li class="chapter-item expanded "><a href="no-null-values.html"><strong aria-hidden="true">47.</strong> no-null-values.md</a></li><li class="chapter-item expanded "><a href="companion-objects.html"><strong aria-hidden="true">48.</strong> companion-objects.md</a></li><li class="chapter-item expanded "><a href="case-classes.html"><strong aria-hidden="true">49.</strong> case-classes.md</a></li><li class="chapter-item expanded "><a href="case-objects.html"><strong aria-hidden="true">50.</strong> case-objects.md</a></li><li class="chapter-item expanded "><a href="functional-error-handling.html"><strong aria-hidden="true">51.</strong> functional-error-handling.md</a></li><li class="chapter-item expanded "><a href="concurrency-signpost.html"><strong aria-hidden="true">52.</strong> concurrency-signpost.md</a></li><li class="chapter-item expanded "><a href="futures.html"><strong aria-hidden="true">53.</strong> futures.md</a></li><li class="chapter-item expanded "><a href="where-next.html"><strong aria-hidden="true">54.</strong> where-next.md</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scala Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>type: chapter
+layout: multipage-overview
+title: Prelude꞉ A Taste of Scala
+description: This page shares a Taste Of Scala example, quickly covering Scala's main features.
+partof: scala_book
+overview-name: Scala Book
+discourse: true
+num: 2
+outof: 54
+previous-page: introduction
+next-page: preliminaries</h2>
+<p>Our hope in this book is to demonstrate that <a href="http://scala-lang.org">Scala</a> is a beautiful, modern, expressive programming language. To help demonstrate that, in this first chapter we’ll jump right in and provide a whirlwind tour of Scala’s main features. After this tour, the book begins with a more traditional “Getting Started” chapter.</p>
+<blockquote>
+<p>In this book we assume that you’ve used a language like Java before, and are ready to see a series of Scala examples to get a feel for what the language looks like. Although it’s not 100% necessary, it will also help if you’ve already <a href="https://www.scala-lang.org/download">downloaded and installed Scala</a> so you can test the examples as you go along. You can also test these examples online with <a href="https://scalafiddle.io">ScalaFiddle.io</a>.</p>
+</blockquote>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Before we jump into the examples, here are a few important things to know about Scala:</p>
+<ul>
+<li>It’s a high-level language</li>
+<li>It’s statically typed</li>
+<li>Its syntax is concise but still readable — we call it <em>expressive</em></li>
+<li>It supports the object-oriented programming (OOP) paradigm</li>
+<li>It supports the functional programming (FP) paradigm</li>
+<li>It has a sophisticated type inference system</li>
+<li>Scala code results in <em>.class</em> files that run on the Java Virtual Machine (JVM)</li>
+<li>It’s easy to use Java libraries in Scala</li>
+</ul>
+<h2 id="hello-world"><a class="header" href="#hello-world">Hello, world</a></h2>
+<p>Ever since the book, <em>C Programming Language</em>, it’s been a tradition to begin programming books with a “Hello, world” example, and not to disappoint, this is one way to write that example in Scala:</p>
+<pre><code class="language-scala">object Hello extends App {
+    println(&quot;Hello, world&quot;)
+}
+</code></pre>
+<p>After you save that code to a file named <em>Hello.scala</em>, you can compile it with <code>scalac</code>:</p>
+<pre><code class="language-sh">$ scalac Hello.scala
+</code></pre>
+<p>If you’re coming to Scala from Java, <code>scalac</code> is just like <code>javac</code>, and that command creates two files:</p>
+<ul>
+<li><em>Hello$.class</em></li>
+<li><em>Hello.class</em></li>
+</ul>
+<p>These are the same “.class” bytecode files you create with <code>javac</code>, and they’re ready to run in the JVM. You run the <code>Hello</code> application with the <code>scala</code> command:</p>
+<pre><code class="language-sh">$ scala Hello
+</code></pre>
+<p>We share more “Hello, world” examples in the lessons that follow, so we’ll leave that introduction as-is for now.</p>
+<h2 id="the-scala-repl"><a class="header" href="#the-scala-repl">The Scala REPL</a></h2>
+<p>The Scala REPL (“Read-Evaluate-Print-Loop”) is a command-line interpreter that you use as a “playground” area to test your Scala code. We introduce it early here so you can use it with the code examples that follow.</p>
+<p>To start a REPL session, just type <code>scala</code> at your operating system command line, and you’ll see something like this:</p>
+<pre><code class="language-scala">$ scala
+Welcome to Scala 2.13.0 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_131).
+Type in expressions for evaluation. Or try :help.
+
+scala&gt; _
+</code></pre>
+<p>Because the REPL is a command-line interpreter, it just sits there waiting for you to type something. Inside the REPL you type Scala expressions to see how they work:</p>
+<pre><code class="language-scala">scala&gt; val x = 1
+x: Int = 1
+
+scala&gt; val y = x + 1
+y: Int = 2
+</code></pre>
+<p>As those examples show, after you type your expressions in the REPL, it shows the result of each expression on the line following the prompt.</p>
+<h2 id="two-types-of-variables"><a class="header" href="#two-types-of-variables">Two types of variables</a></h2>
+<p>Scala has two types of variables:</p>
+<ul>
+<li><code>val</code> is an immutable variable — like <code>final</code> in Java — and should be preferred</li>
+<li><code>var</code> creates a mutable variable, and should only be used when there is a specific reason to use it</li>
+<li>Examples:</li>
+</ul>
+<pre><code class="language-scala">val x = 1   //immutable
+var y = 0   //mutable
+</code></pre>
+<h2 id="declaring-variable-types"><a class="header" href="#declaring-variable-types">Declaring variable types</a></h2>
+<p>In Scala, you typically create variables without declaring their type:</p>
+<pre><code class="language-scala">val x = 1
+val s = &quot;a string&quot;
+val p = new Person(&quot;Regina&quot;)
+</code></pre>
+<p>When you do this, Scala can usually infer the data type for you, as shown in these REPL examples:</p>
+<pre><code class="language-scala">scala&gt; val x = 1
+val x: Int = 1
+
+scala&gt; val s = &quot;a string&quot;
+val s: String = a string
+</code></pre>
+<p>This feature is known as <em>type inference</em>, and it’s a great way to help keep your code concise. You can also <em>explicitly</em> declare a variable’s type, but that’s not usually necessary:</p>
+<pre><code class="language-scala">val x: Int = 1
+val s: String = &quot;a string&quot;
+val p: Person = new Person(&quot;Regina&quot;)
+</code></pre>
+<p>As you can see, that code looks unnecessarily verbose.</p>
+<h2 id="control-structures"><a class="header" href="#control-structures">Control structures</a></h2>
+<p>Here’s a quick tour of Scala’s control structures.</p>
+<h3 id="ifelse"><a class="header" href="#ifelse">if/else</a></h3>
+<p>Scala’s if/else control structure is similar to other languages:</p>
+<pre><code class="language-scala">if (test1) {
+    doA()
+} else if (test2) {
+    doB()
+} else if (test3) {
+    doC()
+} else {
+    doD()
+}
+</code></pre>
+<p>However, unlike Java and many other languages, the if/else construct returns a value, so, among other things, you can use it as a ternary operator:</p>
+<pre><code class="language-scala">val x = if (a &lt; b) a else b
+</code></pre>
+<h3 id="match-expressions"><a class="header" href="#match-expressions">match expressions</a></h3>
+<p>Scala has a <code>match</code> expression, which in its most basic use is like a Java <code>switch</code> statement:</p>
+<pre><code class="language-scala">val result = i match {
+    case 1 =&gt; &quot;one&quot;
+    case 2 =&gt; &quot;two&quot;
+    case _ =&gt; &quot;not 1 or 2&quot;
+}
+</code></pre>
+<p>The <code>match</code> expression isn’t limited to just integers, it can be used with any data type, including booleans:</p>
+<pre><code class="language-scala">val booleanAsString = bool match {
+    case true =&gt; &quot;true&quot;
+    case false =&gt; &quot;false&quot;
+}
+</code></pre>
+<p>Here’s an example of <code>match</code> being used as the body of a method, and matching against many different types:</p>
+<pre><code class="language-scala">def getClassAsString(x: Any):String = x match {
+    case s: String =&gt; s + &quot; is a String&quot;
+    case i: Int =&gt; &quot;Int&quot;
+    case f: Float =&gt; &quot;Float&quot;
+    case l: List[_] =&gt; &quot;List&quot;
+    case p: Person =&gt; &quot;Person&quot;
+    case _ =&gt; &quot;Unknown&quot;
+}
+</code></pre>
+<p>Powerful match expressions are a big feature of Scala, and we share more examples of it later in this book.</p>
+<h3 id="trycatch"><a class="header" href="#trycatch">try/catch</a></h3>
+<p>Scala’s try/catch control structure lets you catch exceptions. It’s similar to Java, but its syntax is consistent with match expressions:</p>
+<pre><code class="language-scala">try {
+    writeToFile(text)
+} catch {
+    case fnfe: FileNotFoundException =&gt; println(fnfe)
+    case ioe: IOException =&gt; println(ioe)
+}
+</code></pre>
+<h3 id="for-loops-and-expressions"><a class="header" href="#for-loops-and-expressions">for loops and expressions</a></h3>
+<p>Scala <code>for</code> loops — which we generally write in this book as <em>for-loops</em> — look like this:</p>
+<pre><code class="language-scala">for (arg &lt;- args) println(arg)
+
+// &quot;x to y&quot; syntax
+for (i &lt;- 0 to 5) println(i)
+
+// &quot;x to y by&quot; syntax
+for (i &lt;- 0 to 10 by 2) println(i)
+</code></pre>
+<p>You can also add the <code>yield</code> keyword to for-loops to create <em>for-expressions</em> that yield a result. Here’s a for-expression that doubles each value in the sequence 1 to 5:</p>
+<pre><code class="language-scala">val x = for (i &lt;- 1 to 5) yield i * 2
+</code></pre>
+<p>Here’s another for-expression that iterates over a list of strings:</p>
+<pre><code class="language-scala">val fruits = List(&quot;apple&quot;, &quot;banana&quot;, &quot;lime&quot;, &quot;orange&quot;)
+
+val fruitLengths = for {
+    f &lt;- fruits
+    if f.length &gt; 4
+} yield f.length
+</code></pre>
+<p>Because Scala code generally just makes sense, we’ll imagine that you can guess how this code works, even if you’ve never seen a for-expression or Scala list until now.</p>
+<h3 id="while-and-dowhile"><a class="header" href="#while-and-dowhile">while and do/while</a></h3>
+<p>Scala also has <code>while</code> and <code>do</code>/<code>while</code> loops. Here’s their general syntax:</p>
+<pre><code class="language-scala">// while loop
+while(condition) {
+    statement(a)
+    statement(b)
+}
+
+// do-while
+do {
+   statement(a)
+   statement(b)
+} 
+while(condition)
+</code></pre>
+<h2 id="classes"><a class="header" href="#classes">Classes</a></h2>
+<p>Here’s an example of a Scala class:</p>
+<pre><code class="language-scala">class Person(var firstName: String, var lastName: String) {
+    def printFullName() = println(s&quot;$firstName $lastName&quot;)
+}
+</code></pre>
+<p>This is how you use that class:</p>
+<pre><code class="language-scala">val p = new Person(&quot;Julia&quot;, &quot;Kern&quot;)
+println(p.firstName)
+p.lastName = &quot;Manes&quot;
+p.printFullName()
+</code></pre>
+<p>Notice that there’s no need to create “get” and “set” methods to access the fields in the class.</p>
+<p>As a more complicated example, here’s a <code>Pizza</code> class that you’ll see later in the book:</p>
+<pre><code class="language-scala">class Pizza (
+    var crustSize: CrustSize,
+    var crustType: CrustType,
+    val toppings: ArrayBuffer[Topping]
+) {
+    def addTopping(t: Topping): Unit = toppings += t
+    def removeTopping(t: Topping): Unit = toppings -= t
+    def removeAllToppings(): Unit = toppings.clear()
+}
+</code></pre>
+<p>In that code, an <code>ArrayBuffer</code> is like Java’s <code>ArrayList</code>. The <code>CrustSize</code>, <code>CrustType</code>, and <code>Topping</code> classes aren’t shown, but you can probably understand how that code works without needing to see those classes.</p>
+<h2 id="scala-methods"><a class="header" href="#scala-methods">Scala methods</a></h2>
+<p>Just like other OOP languages, Scala classes have methods, and this is what the Scala method syntax looks like:</p>
+<pre><code class="language-scala">def sum(a: Int, b: Int): Int = a + b
+def concatenate(s1: String, s2: String): String = s1 + s2
+</code></pre>
+<p>You don’t have to declare a method’s return type, so it’s perfectly legal to write those two methods like this, if you prefer:</p>
+<pre><code class="language-scala">def sum(a: Int, b: Int) = a + b
+def concatenate(s1: String, s2: String) = s1 + s2
+</code></pre>
+<p>This is how you call those methods:</p>
+<pre><code class="language-scala">val x = sum(1, 2)
+val y = concatenate(&quot;foo&quot;, &quot;bar&quot;)
+</code></pre>
+<p>There are more things you can do with methods, such as providing default values for method parameters, but that’s a good start for now.</p>
+<h2 id="traits"><a class="header" href="#traits">Traits</a></h2>
+<p>Traits in Scala are a lot of fun, and they also let you break your code down into small, modular units. To demonstrate traits, here’s an example from later in the book. Given these three traits:</p>
+<pre><code class="language-scala">trait Speaker {
+    def speak(): String  // has no body, so it’s abstract
+}
+
+trait TailWagger {
+    def startTail(): Unit = println(&quot;tail is wagging&quot;)
+    def stopTail(): Unit = println(&quot;tail is stopped&quot;)
+}
+
+trait Runner {
+    def startRunning(): Unit = println(&quot;I’m running&quot;)
+    def stopRunning(): Unit = println(&quot;Stopped running&quot;)
+}
+</code></pre>
+<p>You can create a <code>Dog</code> class that extends all of those traits while providing behavior for the <code>speak</code> method:</p>
+<pre><code class="language-scala">class Dog(name: String) extends Speaker with TailWagger with Runner {
+    def speak(): String = &quot;Woof!&quot;
+}
+</code></pre>
+<p>Similarly, here’s a <code>Cat</code> class that shows how to override multiple trait methods:</p>
+<pre><code class="language-scala">class Cat extends Speaker with TailWagger with Runner {
+    def speak(): String = &quot;Meow&quot;
+    override def startRunning(): Unit = println(&quot;Yeah ... I don’t run&quot;)
+    override def stopRunning(): Unit = println(&quot;No need to stop&quot;)
+}
+</code></pre>
+<p>If that code makes sense — great, you’re comfortable with traits! If not, don’t worry, we explain it in detail later in the book.</p>
+<h2 id="collections-classes"><a class="header" href="#collections-classes">Collections classes</a></h2>
+<p>If you’re coming to Scala from Java and you’re ready to really jump in and learn Scala, it’s possible to use the Java collections classes in Scala, and some people do so for several weeks or months while getting comfortable with Scala. But it’s highly recommended that you learn the basic Scala collections classes — <code>List</code>, <code>ListBuffer</code>, <code>Vector</code>, <code>ArrayBuffer</code>, <code>Map</code>, and <code>Set</code> — as soon as possible. A great benefit of the Scala collections classes is that they offer many powerful methods that you’ll want to start using as soon as possible to simplify your code.</p>
+<h3 id="populating-lists"><a class="header" href="#populating-lists">Populating lists</a></h3>
+<p>There are times when it’s helpful to create sample lists that are populated with data, and Scala offers many ways to populate lists. Here are just a few:</p>
+<pre><code class="language-scala">val nums = List.range(0, 10)
+val nums = (1 to 10 by 2).toList
+val letters = ('a' to 'f').toList
+val letters = ('a' to 'f' by 2).toList
+</code></pre>
+<h3 id="sequence-methods"><a class="header" href="#sequence-methods">Sequence methods</a></h3>
+<p>While there are many sequential collections classes you can use — <code>Array</code>, <code>ArrayBuffer</code>, <code>Vector</code>, <code>List</code>, and more — let’s look at some examples of what you can do with the <code>List</code> class. Given these two lists:</p>
+<pre><code class="language-scala">val nums = (1 to 10).toList
+val names = List(&quot;joel&quot;, &quot;ed&quot;, &quot;chris&quot;, &quot;maurice&quot;)
+</code></pre>
+<p>This is the <code>foreach</code> method:</p>
+<pre><code class="language-scala">scala&gt; names.foreach(println)
+joel
+ed
+chris
+maurice
+</code></pre>
+<p>Here’s the <code>filter</code> method, followed by <code>foreach</code>:</p>
+<pre><code class="language-scala">scala&gt; nums.filter(_ &lt; 4).foreach(println)
+1
+2
+3
+</code></pre>
+<p>Here are some examples of the <code>map</code> method:</p>
+<pre><code class="language-scala">scala&gt; val doubles = nums.map(_ * 2)
+doubles: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)
+
+scala&gt; val capNames = names.map(_.capitalize)
+capNames: List[String] = List(Joel, Ed, Chris, Maurice)
+
+scala&gt; val lessThanFive = nums.map(_ &lt; 5)
+lessThanFive: List[Boolean] = List(true, true, true, true, false, false, false, false, false, false)
+</code></pre>
+<p>Even without any explanation you can see how <code>map</code> works: It applies an algorithm you supply to every element in the collection, returning a new, transformed value for each element.</p>
+<p>If you’re ready to see one of the most powerful collections methods, here’s <code>foldLeft</code>:</p>
+<pre><code class="language-scala">scala&gt; nums.foldLeft(0)(_ + _)
+res0: Int = 55
+
+scala&gt; nums.foldLeft(1)(_ * _)
+res1: Int = 3628800
+</code></pre>
+<p>Once you know that the first parameter to <code>foldLeft</code> is a <em>seed</em> value, you can guess that the first example yields the <em>sum</em> of the numbers in <code>nums</code>, and the second example returns the <em>product</em> of all those numbers.</p>
+<p>There are many (many!) more methods available to Scala collections classes, and many of them will be demonstrated in the collections lessons that follow, but hopefully this gives you an idea of their power.</p>
+<blockquote>
+<p>For more details, jump to <a href="%7B%7Bsite.baseurl%7D%7D/overviews/scala-book/collections-101.html">the Scala Book collections lessons</a>, or see <a href="%7B%7Bsite.baseurl%7D%7D/overviews/collections-2.13/overview.html">the Mutable and Immutable collections overview</a> for more details and examples.</p>
+</blockquote>
+<h2 id="tuples"><a class="header" href="#tuples">Tuples</a></h2>
+<p>Tuples let you put a heterogenous collection of elements in a little container. A tuple can contain between two and 22 values, and all of the values can have different types. For example, this is a tuple that holds three different types, an <code>Int</code>, a <code>Double</code>, and a <code>String</code>:</p>
+<pre><code class="language-scala">(11, 11.0, &quot;Eleven&quot;)
+</code></pre>
+<p>This is known as a <code>Tuple3</code>, because it contains three elements.</p>
+<p>Tuples are convenient in many places, such as where you might use an ad-hoc class in other languages. For instance, you can return a tuple from a method instead of returning a class:</p>
+<pre><code class="language-scala">def getAaplInfo(): (String, BigDecimal, Long) = {
+    // get the stock symbol, price, and volume
+    (&quot;AAPL&quot;, BigDecimal(123.45), 101202303L)
+}
+</code></pre>
+<p>Then you can assign the result of the method to a variable:</p>
+<pre><code class="language-scala">val t = getAaplInfo()
+</code></pre>
+<p>Once you have a tuple variable, you can access its values by number, preceded by an underscore:</p>
+<pre><code class="language-scala">t._1
+t._2
+t._3
+</code></pre>
+<p>The REPL demonstrates the results of accessing those fields:</p>
+<pre><code class="language-scala">scala&gt; t._1
+res0: String = AAPL
+
+scala&gt; t._2
+res1: scala.math.BigDecimal = 123.45
+
+scala&gt; t._3
+res2: Long = 101202303
+</code></pre>
+<p>The values of a tuple can also be extracted using pattern matching. In this next example, the fields inside the tuple are assigned to the variables <code>symbol</code>, <code>price</code>, and <code>volume</code>:</p>
+<pre><code class="language-scala">val (symbol, price, volume) = getAaplInfo()
+</code></pre>
+<p>Once again, the REPL shows the result:</p>
+<pre><code class="language-scala">scala&gt; val (symbol, price, volume) = getAaplInfo()
+symbol: String = AAPL
+price: scala.math.BigDecimal = 123.45
+volume: Long = 101202303
+</code></pre>
+<p>Tuples are nice for those times when you want to quickly (and temporarily) group some things together.
+If you notice that you are using the same tuples multiple times, it could be useful to declare a dedicated case class, such as:</p>
+<pre><code class="language-scala">case class StockInfo(symbol: String, price: BigDecimal, volume: Long)
+</code></pre>
+<h2 id="what-we-havent-shown"><a class="header" href="#what-we-havent-shown">What we haven’t shown</a></h2>
+<p>While that was whirlwind introduction to Scala in about ten printed pages, there are many things we haven’t shown yet, including:</p>
+<ul>
+<li>Strings and built-in numeric types</li>
+<li>Packaging and imports</li>
+<li>How to use Java collections classes in Scala</li>
+<li>How to use Java libraries in Scala</li>
+<li>How to build Scala projects</li>
+<li>How to perform unit testing in Scala</li>
+<li>How to write Scala shell scripts</li>
+<li>Maps, Sets, and other collections classes</li>
+<li>Object-oriented programming</li>
+<li>Functional programming</li>
+<li>Concurrency with Futures</li>
+<li>More ...</li>
+</ul>
+<p>If you like what you’ve seen so far, we hope you’ll like the rest of the book.</p>
+<h2 id="a-bit-of-background"><a class="header" href="#a-bit-of-background">A bit of background</a></h2>
+<p>Scala was created by <a href="https://en.wikipedia.org/wiki/Martin_Odersky">Martin Odersky</a>, who studied under <a href="https://en.wikipedia.org/wiki/Niklaus_Wirth">Niklaus Wirth</a>, who created Pascal and several other languages. Mr. Odersky is one of the co-designers of Generic Java, and is also known as the “father” of the <code>javac</code> compiler.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="preliminaries.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="preliminaries.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

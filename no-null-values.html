@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>no-null-values.md - Scala Book</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> introduction.md</a></li><li class="chapter-item expanded "><a href="prelude-taste-of-scala.html"><strong aria-hidden="true">2.</strong> prelude-taste-of-scala.md</a></li><li class="chapter-item expanded "><a href="preliminaries.html"><strong aria-hidden="true">3.</strong> preliminaries.md</a></li><li class="chapter-item expanded "><a href="scala-features.html"><strong aria-hidden="true">4.</strong> scala-features.md</a></li><li class="chapter-item expanded "><a href="hello-world-1.html"><strong aria-hidden="true">5.</strong> hello-world-1.md</a></li><li class="chapter-item expanded "><a href="hello-world-2.html"><strong aria-hidden="true">6.</strong> hello-world-2.md</a></li><li class="chapter-item expanded "><a href="scala-repl.html"><strong aria-hidden="true">7.</strong> scala-repl.md</a></li><li class="chapter-item expanded "><a href="two-types-variables.html"><strong aria-hidden="true">8.</strong> two-types-variables.md</a></li><li class="chapter-item expanded "><a href="type-is-optional.html"><strong aria-hidden="true">9.</strong> type-is-optional.md</a></li><li class="chapter-item expanded "><a href="built-in-types.html"><strong aria-hidden="true">10.</strong> built-in-types.md</a></li><li class="chapter-item expanded "><a href="two-notes-about-strings.html"><strong aria-hidden="true">11.</strong> two-notes-about-strings.md</a></li><li class="chapter-item expanded "><a href="command-line-io.html"><strong aria-hidden="true">12.</strong> command-line-io.md</a></li><li class="chapter-item expanded "><a href="control-structures.html"><strong aria-hidden="true">13.</strong> control-structures.md</a></li><li class="chapter-item expanded "><a href="if-then-else-construct.html"><strong aria-hidden="true">14.</strong> if-then-else-construct.md</a></li><li class="chapter-item expanded "><a href="for-loops.html"><strong aria-hidden="true">15.</strong> for-loops.md</a></li><li class="chapter-item expanded "><a href="for-expressions.html"><strong aria-hidden="true">16.</strong> for-expressions.md</a></li><li class="chapter-item expanded "><a href="match-expressions.html"><strong aria-hidden="true">17.</strong> match-expressions.md</a></li><li class="chapter-item expanded "><a href="try-catch-finally.html"><strong aria-hidden="true">18.</strong> try-catch-finally.md</a></li><li class="chapter-item expanded "><a href="classes.html"><strong aria-hidden="true">19.</strong> classes.md</a></li><li class="chapter-item expanded "><a href="classes-aux-constructors.html"><strong aria-hidden="true">20.</strong> classes-aux-constructors.md</a></li><li class="chapter-item expanded "><a href="constructors-default-values.html"><strong aria-hidden="true">21.</strong> constructors-default-values.md</a></li><li class="chapter-item expanded "><a href="methods-first-look.html"><strong aria-hidden="true">22.</strong> methods-first-look.md</a></li><li class="chapter-item expanded "><a href="enumerations-pizza-class.html"><strong aria-hidden="true">23.</strong> enumerations-pizza-class.md</a></li><li class="chapter-item expanded "><a href="traits-intro.html"><strong aria-hidden="true">24.</strong> traits-intro.md</a></li><li class="chapter-item expanded "><a href="traits-interfaces.html"><strong aria-hidden="true">25.</strong> traits-interfaces.md</a></li><li class="chapter-item expanded "><a href="traits-abstract-mixins.html"><strong aria-hidden="true">26.</strong> traits-abstract-mixins.md</a></li><li class="chapter-item expanded "><a href="abstract-classes.html"><strong aria-hidden="true">27.</strong> abstract-classes.md</a></li><li class="chapter-item expanded "><a href="collections-101.html"><strong aria-hidden="true">28.</strong> collections-101.md</a></li><li class="chapter-item expanded "><a href="arraybuffer-examples.html"><strong aria-hidden="true">29.</strong> arraybuffer-examples.md</a></li><li class="chapter-item expanded "><a href="list-class.html"><strong aria-hidden="true">30.</strong> list-class.md</a></li><li class="chapter-item expanded "><a href="vector-class.html"><strong aria-hidden="true">31.</strong> vector-class.md</a></li><li class="chapter-item expanded "><a href="map-class.html"><strong aria-hidden="true">32.</strong> map-class.md</a></li><li class="chapter-item expanded "><a href="set-class.html"><strong aria-hidden="true">33.</strong> set-class.md</a></li><li class="chapter-item expanded "><a href="anonymous-functions.html"><strong aria-hidden="true">34.</strong> anonymous-functions.md</a></li><li class="chapter-item expanded "><a href="collections-methods.html"><strong aria-hidden="true">35.</strong> collections-methods.md</a></li><li class="chapter-item expanded "><a href="collections-maps.html"><strong aria-hidden="true">36.</strong> collections-maps.md</a></li><li class="chapter-item expanded "><a href="misc.html"><strong aria-hidden="true">37.</strong> misc.md</a></li><li class="chapter-item expanded "><a href="tuples.html"><strong aria-hidden="true">38.</strong> tuples.md</a></li><li class="chapter-item expanded "><a href="oop-pizza-example.html"><strong aria-hidden="true">39.</strong> oop-pizza-example.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-intro.html"><strong aria-hidden="true">40.</strong> sbt-scalatest-intro.md</a></li><li class="chapter-item expanded "><a href="scala-build-tool-sbt.html"><strong aria-hidden="true">41.</strong> scala-build-tool-sbt.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-tdd.html"><strong aria-hidden="true">42.</strong> sbt-scalatest-tdd.md</a></li><li class="chapter-item expanded "><a href="sbt-scalatest-bdd.html"><strong aria-hidden="true">43.</strong> sbt-scalatest-bdd.md</a></li><li class="chapter-item expanded "><a href="functional-programming.html"><strong aria-hidden="true">44.</strong> functional-programming.md</a></li><li class="chapter-item expanded "><a href="pure-functions.html"><strong aria-hidden="true">45.</strong> pure-functions.md</a></li><li class="chapter-item expanded "><a href="passing-functions-around.html"><strong aria-hidden="true">46.</strong> passing-functions-around.md</a></li><li class="chapter-item expanded "><a href="no-null-values.html" class="active"><strong aria-hidden="true">47.</strong> no-null-values.md</a></li><li class="chapter-item expanded "><a href="companion-objects.html"><strong aria-hidden="true">48.</strong> companion-objects.md</a></li><li class="chapter-item expanded "><a href="case-classes.html"><strong aria-hidden="true">49.</strong> case-classes.md</a></li><li class="chapter-item expanded "><a href="case-objects.html"><strong aria-hidden="true">50.</strong> case-objects.md</a></li><li class="chapter-item expanded "><a href="functional-error-handling.html"><strong aria-hidden="true">51.</strong> functional-error-handling.md</a></li><li class="chapter-item expanded "><a href="concurrency-signpost.html"><strong aria-hidden="true">52.</strong> concurrency-signpost.md</a></li><li class="chapter-item expanded "><a href="futures.html"><strong aria-hidden="true">53.</strong> futures.md</a></li><li class="chapter-item expanded "><a href="where-next.html"><strong aria-hidden="true">54.</strong> where-next.md</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Scala Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>type: section
+layout: multipage-overview
+title: No Null Values
+description: This lesson demonstrates the Scala Option, Some, and None classes, including how to use them instead of null values.
+partof: scala_book
+overview-name: Scala Book
+discourse: true
+num: 47
+outof: 54
+previous-page: passing-functions-around
+next-page: companion-objects</h2>
+<p>Functional programming is like writing a series of algebraic equations, and because you don’t use null values in algebra, you don’t use null values in FP. That brings up an interesting question: In the situations where you might normally use a null value in Java/OOP code, what do you do?</p>
+<p>Scala’s solution is to use constructs like the Option/Some/None classes. We’ll provide an introduction to the techniques in this lesson.</p>
+<h2 id="a-first-example"><a class="header" href="#a-first-example">A first example</a></h2>
+<p>While this first Option/Some/None example doesn’t deal with null values, it’s a good way to demonstrate the Option/Some/None classes, so we’ll start with it.</p>
+<p>Imagine that you want to write a method to make it easy to convert strings to integer values, and you want an elegant way to handle the exceptions that can be thrown when your method gets a string like <code>&quot;foo&quot;</code> instead of something that converts to a number, like <code>&quot;1&quot;</code>. A first guess at such a function might look like this:</p>
+<pre><code class="language-scala">def toInt(s: String): Int = {
+    try {
+        Integer.parseInt(s.trim)
+    } catch {
+        case e: Exception =&gt; 0
+    }
+}
+</code></pre>
+<p>The idea of this function is that if a string converts to an integer, you return the converted <code>Int</code>, but if the conversion fails you return 0. This might be okay for some purposes, but it’s not really accurate. For instance, the method might have received <code>&quot;0&quot;</code>, but it may have also received <code>&quot;foo&quot;</code> or <code>&quot;bar&quot;</code> or an infinite number of other strings. This creates a real problem: How do you know when the method really received a <code>&quot;0&quot;</code>, or when it received something else? The answer is that with this approach, there’s no way to know.</p>
+<h2 id="using-optionsomenone"><a class="header" href="#using-optionsomenone">Using Option/Some/None</a></h2>
+<p>Scala’s solution to this problem is to use a trio of classes known as <code>Option</code>, <code>Some</code>, and <code>None</code>. The <code>Some</code> and <code>None</code> classes are subclasses of <code>Option</code>, so the solution works like this:</p>
+<ul>
+<li>You declare that <code>toInt</code> returns an <code>Option</code> type</li>
+<li>If <code>toInt</code> receives a string it <em>can</em> convert to an <code>Int</code>, you wrap the <code>Int</code> inside of a <code>Some</code></li>
+<li>If <code>toInt</code> receives a string it <em>can’t</em> convert, it returns a <code>None</code></li>
+</ul>
+<p>The implementation of the solution looks like this:</p>
+<pre><code class="language-scala">def toInt(s: String): Option[Int] = {
+    try {
+        Some(Integer.parseInt(s.trim))
+    } catch {
+        case e: Exception =&gt; None
+    }
+}
+</code></pre>
+<p>This code can be read as, “When the given string converts to an integer, return the integer wrapped in a <code>Some</code> wrapper, such as <code>Some(1)</code>. When the string can’t be converted to an integer, return a <code>None</code> value.”</p>
+<p>Here are two REPL examples that demonstrate <code>toInt</code> in action:</p>
+<pre><code class="language-scala">scala&gt; val a = toInt(&quot;1&quot;)
+a: Option[Int] = Some(1)
+
+scala&gt; val a = toInt(&quot;foo&quot;)
+a: Option[Int] = None
+</code></pre>
+<p>As shown, the string <code>&quot;1&quot;</code> converts to <code>Some(1)</code>, and the string <code>&quot;foo&quot;</code> converts to <code>None</code>. This is the essence of the Option/Some/None approach. It’s used to handle exceptions (as in this example), and the same technique works for handling null values.</p>
+<blockquote>
+<p>You’ll find this approach used throughout Scala library classes, and in third-party Scala libraries.</p>
+</blockquote>
+<h2 id="being-a-consumer-of-toint"><a class="header" href="#being-a-consumer-of-toint">Being a consumer of toInt</a></h2>
+<p>Now imagine that you’re a consumer of the <code>toInt</code> method. You know that the method returns a subclass of <code>Option[Int]</code>, so the question becomes, how do you work with these return types?</p>
+<p>There are two main answers, depending on your needs:</p>
+<ul>
+<li>Use a <code>match</code> expression</li>
+<li>Use a for-expression</li>
+</ul>
+<blockquote>
+<p>There are other approaches, but these are the two main approaches, especially from an FP standpoint.</p>
+</blockquote>
+<h3 id="using-a-match-expression"><a class="header" href="#using-a-match-expression">Using a match expression</a></h3>
+<p>One possibility is to use a <code>match</code> expression, which looks like this:</p>
+<pre><code class="language-scala">toInt(x) match {
+    case Some(i) =&gt; println(i)
+    case None =&gt; println(&quot;That didn't work.&quot;)
+}
+</code></pre>
+<p>In this example, if <code>x</code> can be converted to an <code>Int</code>, the first <code>case</code> statement is executed; if <code>x</code> can’t be converted to an <code>Int</code>, the second <code>case</code> statement is executed.</p>
+<h3 id="using-foryield"><a class="header" href="#using-foryield">Using for/yield</a></h3>
+<p>Another common solution is to use a for-expression — i.e., the for/yield combination that was shown earlier in this book. To demonstrate this, imagine that you want to convert three strings to integer values, and then add them together. The for/yield solution looks like this:</p>
+<pre><code class="language-scala">val y = for {
+    a &lt;- toInt(stringA)
+    b &lt;- toInt(stringB)
+    c &lt;- toInt(stringC)
+} yield a + b + c
+</code></pre>
+<p>When that expression finishes running, <code>y</code> will be one of two things:</p>
+<ul>
+<li>If all three strings convert to integers, <code>y</code> will be a <code>Some[Int]</code>, i.e., an integer wrapped inside a <code>Some</code></li>
+<li>If any of the three strings can’t be converted to an integer, <code>y</code> will be a <code>None</code></li>
+</ul>
+<p>You can test this for yourself in the Scala REPL. First, paste these three string variables into the REPL:</p>
+<pre><code class="language-scala">val stringA = &quot;1&quot;
+val stringB = &quot;2&quot;
+val stringC = &quot;3&quot;
+</code></pre>
+<p>Next, paste the for-expression into the REPL. When you do that, you’ll see this result:</p>
+<pre><code class="language-scala">scala&gt; val y = for {
+     |     a &lt;- toInt(stringA)
+     |     b &lt;- toInt(stringB)
+     |     c &lt;- toInt(stringC)
+     | } yield a + b + c
+y: Option[Int] = Some(6)
+</code></pre>
+<p>As shown, <code>y</code> is bound to the value <code>Some(6)</code>.</p>
+<p>To see the failure case, change any of those strings to something that won’t convert to an integer. When you do that, you’ll see that <code>y</code> is a <code>None</code>:</p>
+<pre><code class="language-scala">y: Option[Int] = None
+</code></pre>
+<h2 id="options-can-be-thought-of-as-a-container-of-0-or-1-items"><a class="header" href="#options-can-be-thought-of-as-a-container-of-0-or-1-items">Options can be thought of as a container of 0 or 1 items</a></h2>
+<p>One good way to think about the <code>Option</code> classes is that they represent a <em>container</em>, more specifically a container that has either zero or one item inside:</p>
+<ul>
+<li><code>Some</code> is a container with one item in it</li>
+<li><code>None</code> is a container, but it has nothing in it</li>
+</ul>
+<blockquote>
+<p>If you prefer to think of the Option classes as being like a box, <code>None</code> is a little like getting an empty box for a birthday gift.</p>
+</blockquote>
+<h2 id="using-foreach"><a class="header" href="#using-foreach">Using foreach</a></h2>
+<p>Because <code>Some</code> and <code>None</code> can be thought of containers, they can be further thought of as being like collections classes. As a result, they have all of the methods you’d expect from a collection class, including <code>map</code>, <code>filter</code>, <code>foreach</code>, etc.</p>
+<p>This raises an interesting question: What will these two values print, if anything?</p>
+<pre><code class="language-scala">toInt(&quot;1&quot;).foreach(println)
+toInt(&quot;x&quot;).foreach(println)
+</code></pre>
+<p>The answer is that the first example prints the number <code>1</code>, and the second example doesn’t print anything. The first example prints <code>1</code> because:</p>
+<ul>
+<li>toInt(&quot;1&quot;) evaluates to <code>Some(1)</code></li>
+<li>The expression evaluates to <code>Some(1).foreach(println)</code></li>
+<li>The <code>foreach</code> method on the <code>Some</code> class knows how to reach inside the <code>Some</code> container and extract the value (<code>1</code>) that’s inside it, so it passes that value to <code>println</code></li>
+</ul>
+<p>Similarly, the second example prints nothing because:</p>
+<ul>
+<li><code>toInt(&quot;x&quot;)</code> evaluates to <code>None</code></li>
+<li>The <code>foreach</code> method on the <code>None</code> class knows that <code>None</code> doesn’t contain anything, so it does nothing</li>
+</ul>
+<blockquote>
+<p>Again, <code>None</code> is just an empty container.</p>
+</blockquote>
+<p>Somewhere in Scala’s history, someone noted that the first example (the <code>Some</code>) represents the “Happy Path” of Option/Some/None approach, and the second example (the <code>None</code>) represents the “Unhappy Path.” <em>But</em>, despite having two different possible outcomes, the cool thing about the approach is that the code you write to handle an <code>Option</code> looks exactly the same in both cases. The <code>foreach</code> examples look like this:</p>
+<pre><code class="language-scala">toInt(&quot;1&quot;).foreach(println)
+toInt(&quot;x&quot;).foreach(println)
+</code></pre>
+<p>And the for-expression looks like this:</p>
+<pre><code class="language-scala">val y = for {
+    a &lt;- toInt(stringA)
+    b &lt;- toInt(stringB)
+    c &lt;- toInt(stringC)
+} yield a + b + c
+</code></pre>
+<p>You only have to write one piece of code to handle both the Happy and Unhappy Paths, and that simplifies your code. The only time you have to think about whether you got a <code>Some</code> or a <code>None</code> is when you finally handle the result value in a <code>match</code> expression, like this:</p>
+<pre><code class="language-scala">toInt(x) match {
+    case Some(i) =&gt; println(i)
+    case None =&gt; println(&quot;That didn't work.&quot;)
+}
+</code></pre>
+<h2 id="using-option-to-replace-null-values"><a class="header" href="#using-option-to-replace-null-values">Using Option to replace null values</a></h2>
+<p>Another place where a null value can silently creep into your code is with a class like this:</p>
+<pre><code class="language-scala">class Address (
+    var street1: String,
+    var street2: String,
+    var city: String, 
+    var state: String, 
+    var zip: String
+)
+</code></pre>
+<p>While every address on Earth has a <code>street1</code> value, the <code>street2</code> value is optional. As a result, that class is subject to this type of abuse:</p>
+<pre><code class="language-scala">val santa = new Address(
+    &quot;1 Main Street&quot;,
+    null,               // &lt;-- D'oh! A null value!
+    &quot;North Pole&quot;,
+    &quot;Alaska&quot;,
+    &quot;99705&quot;
+)
+</code></pre>
+<p>To handle situations like this, developers tend to use null values or empty strings, both of which are hacks to work around the main problem: <code>street2</code> is an <em>optional</em> field. In Scala — and other modern languages — the correct solution is to declare up front that <code>street2</code> is optional:</p>
+<pre><code class="language-scala">class Address (
+    var street1: String,
+    var street2: Option[String],
+    var city: String, 
+    var state: String, 
+    var zip: String
+)
+</code></pre>
+<p>With that definition, developers can write more accurate code like this:</p>
+<pre><code class="language-scala">val santa = new Address(
+    &quot;1 Main Street&quot;,
+    None,
+    &quot;North Pole&quot;,
+    &quot;Alaska&quot;,
+    &quot;99705&quot;
+)
+</code></pre>
+<p>or this:</p>
+<pre><code class="language-scala">val santa = new Address(
+    &quot;123 Main Street&quot;,
+    Some(&quot;Apt. 2B&quot;),
+    &quot;Talkeetna&quot;,
+    &quot;Alaska&quot;,
+    &quot;99676&quot;
+)
+</code></pre>
+<p>Once you have an optional field like this, you work with it as shown in the previous examples: With <code>match</code> expressions, <code>for</code> expressions, and other built-in methods like <code>foreach</code>.</p>
+<h2 id="option-isnt-the-only-solution"><a class="header" href="#option-isnt-the-only-solution">Option isn’t the only solution</a></h2>
+<p>This lesson focused on the Option/Some/None solution, but Scala has a few other alternatives. For example, a trio of classes known as Try/Success/Failure work in the same manner, but a) you primarily use these classes when code can throw exceptions, and b) the <code>Failure</code> class gives you access to the exception message. For example, Try/Success/Failure is commonly used when writing methods that interact with files, databases, and internet services, as those functions can easily throw exceptions. These classes are demonstrated in the Functional Error Handling lesson that follows.</p>
+<h2 id="key-points"><a class="header" href="#key-points">Key points</a></h2>
+<p>This lesson was a little longer than the others, so here’s a quick review of the key points:</p>
+<ul>
+<li>Functional programmers don’t use null values</li>
+<li>A main replacement for null values is to use the Option/Some/None classes</li>
+<li>Common ways to work with Option values are <code>match</code> and <code>for</code> expressions</li>
+<li>Options can be thought of as containers of one item (<code>Some</code>) and no items (<code>None</code>)</li>
+<li>You can also use Options when defining constructor parameters</li>
+</ul>
+<h2 id="see-also"><a class="header" href="#see-also">See also</a></h2>
+<ul>
+<li>Tony Hoare invented the null reference in 1965, and refers to it as his “<a href="https://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions">billion dollar mistake</a>.”</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="passing-functions-around.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="companion-objects.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="passing-functions-around.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="companion-objects.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
